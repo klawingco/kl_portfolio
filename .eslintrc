@@ -25,14 +25,14 @@
     "react/no-multi-comp": "error",
     "import/first": "error",
     "import/order": "error",
-     "linebreak-style": 0,
-     "prettier/prettier": [
-        "error",
-        {
-          "trailingComma": "es5",
-          "singleQuote": true
-        }
-      ]    
+    "linebreak-style": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true
+      }
+    ]
   },
   "globals": {
     "React": "writable"
