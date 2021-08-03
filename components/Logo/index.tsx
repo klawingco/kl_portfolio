@@ -5,9 +5,11 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import styles from './styles.module.css'
 import { ThemeMode } from 'config/theme'
+import { simpleOpacity } from 'config/animations'
 
 const Logo = () => {
   const { colorMode } = useColorMode()
+  const MotionImage = motion(Image)
   return (
     <Link href="/" passHref>
       <motion.div
@@ -21,13 +23,27 @@ const Logo = () => {
           repeatDelay: 1,
         }}
       >
-        <Image
-          className={styles.logo}
-          boxSize="50px"
-          objectFit="cover"
-          src={colorMode === ThemeMode.Dark ? './logo.png' : './logo_light.png'}
-          alt="KL Lawingco"
-        />
+        {colorMode === ThemeMode.Dark ? (
+          <MotionImage
+            className={styles.logo}
+            boxSize="50px"
+            objectFit="cover"
+            src="./logo.png"
+            alt="KL Lawingco"
+            fallbackSrc="./logo.png"
+            variants={simpleOpacity}
+          />
+        ) : (
+          <MotionImage
+            className={styles.logo}
+            boxSize="50px"
+            objectFit="cover"
+            src="./logo_light.png"
+            fallbackSrc="./logo_light.png"
+            alt="KL Lawingco"
+            variants={simpleOpacity}
+          />
+        )}
       </motion.div>
     </Link>
   )
