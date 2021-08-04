@@ -1,4 +1,4 @@
-/* 
+
 .sidebar{
   border: 3px solid #97DFFC;
   border-radius: 100%;
@@ -12,16 +12,11 @@
 .dark{
   border: 3px solid black;
 }
-.logo{
-  position: absolute;
-  top: 3%;
-  left: 3.5%;
-  cursor: pointer;
-}
+
 
 .marginTopForce{
   margin-top: 0 !important;
 }
 .marginTopSmall{
   margin-top: 12px !important;
-} */
+}

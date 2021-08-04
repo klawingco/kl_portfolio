@@ -240,6 +240,14 @@
   dependencies:
     "@chakra-ui/utils" "1.8.1"
 
+"@chakra-ui/icons@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/icons/-/icons-1.0.14.tgz#8d402074dabdb410af36e6f1af047bb186973053"
+  integrity sha512-VM21FkQc4rWcES1D6ddNIq6VYaCnTwWBIaqM9GRQZ7FpsLeVNk6UFYiE8MMtGWVIXq3k9jEYLbQHm7YdEF9yLQ==
+  dependencies:
+    "@chakra-ui/icon" "1.1.10"
+    "@types/react" "^17.0.0"
+
 "@chakra-ui/image@1.0.17":
   version "1.0.17"
   resolved "https://registry.yarnpkg.com/@chakra-ui/image/-/image-1.0.17.tgz#b5c7fd564af1d23303eafe1d443c7dbecfd4cf31"
@@ -904,7 +912,7 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
 
-"@types/react@17.0.15":
+"@types/react@17.0.15", "@types/react@^17.0.0":
   version "17.0.15"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.15.tgz#c7533dc38025677e312606502df7656a6ea626d0"
   integrity sha512-uTKHDK9STXFHLaKv6IMnwp52fm0hwU+N89w/p9grdUqcFA6WuqDyPhaWopbNyE1k/VhgzmHl8pu1L4wITtmlLw==
@@ -3419,6 +3427,11 @@ react-focus-lock@2.5.0:
     react-clientside-effect "^1.2.2"
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
+
+react-icons@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.2.0.tgz#6dda80c8a8f338ff96a1851424d63083282630d0"
+  integrity sha512-rmzEDFt+AVXRzD7zDE21gcxyBizD/3NqjbX6cmViAgdqfJ2UiLer8927/QhhrXQV7dEj/1EGuOTPp7JnLYVJKQ==
 
 react-is@17.0.2:
   version "17.0.2"

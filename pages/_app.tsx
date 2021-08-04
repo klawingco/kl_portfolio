@@ -1,12 +1,16 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
+import { AnimatePresence } from 'framer-motion'
+import theme from 'config/theme'
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+function KLSite({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <ChakraProvider>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <AnimatePresence exitBeforeEnter>
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </AnimatePresence>
   )
 }
-export default MyApp
+export default KLSite
