@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-
 import { useColorMode, Image } from '@chakra-ui/react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'

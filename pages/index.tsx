@@ -2,6 +2,7 @@ import { Grid, GridItem, Flex, Box } from '@chakra-ui/react'
 import Head from 'next/head'
 import Menu from 'components/Menu'
 import Sidebar from 'components/Sidebar'
+import About from 'components/About'
 
 const Portfolio = (): JSX.Element => (
   <>
@@ -12,6 +13,8 @@ const Portfolio = (): JSX.Element => (
         content="My personal solace place on web-earth."
       />
       <link rel="icon" href="/favicon.ico" />
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
     <Grid
       h="100vh"
@@ -34,6 +37,7 @@ const Portfolio = (): JSX.Element => (
         <Menu />
         <Flex>
           <Box>
+            <About />
             {/* <Heading
               as="h4"
               size="2xl"

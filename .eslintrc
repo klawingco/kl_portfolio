@@ -26,6 +26,7 @@
     "import/first": "error",
     "import/order": "error",
     "linebreak-style": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
     "prettier/prettier": [
       "error",
       {

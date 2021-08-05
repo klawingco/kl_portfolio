@@ -1,6 +1,9 @@
 
 .sidebar{
   border: 3px solid #97DFFC;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
   border-radius: 100%;
   height: 120vh;
   width: 50vw;
@@ -11,6 +14,9 @@
 }
 .dark{
   border: 3px solid black;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
 }
 
 

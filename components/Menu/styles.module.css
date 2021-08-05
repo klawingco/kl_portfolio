@@ -5,6 +5,7 @@
   border-right: 1px solid transparent;
   transition: text-decoration-color 300ms !important;
   background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 .blogBtn:hover,
