@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import {
   Stack,
   Heading,
@@ -25,8 +26,8 @@ import {
   letterSpace,
   simpleOpacity,
   stagger,
+  scaleUp,
 } from 'config/animations'
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const Sidebar = () => {
   const { colorMode } = useColorMode()
   const catchPhrase = useColorModeValue('black.400', 'cyan.200')
@@ -39,22 +40,15 @@ const Sidebar = () => {
   const MotionStack = motion(Stack)
   const MotionButton = motion(Button)
   const MotionBox = motion(Box)
+
   return (
     <motion.div initial="initial" animate="animate">
       <motion.div
         className={`${styles.sidebar} ${
           colorMode === 'light' ? styles.dark : ''
         }`}
-        animate={{
-          scale: [1, 1.05, 1],
-          opacity: [1, 0.65, 1],
-        }}
-        transition={{
-          duration: 3,
-          ease: 'easeInOut',
-          loop: Infinity,
-          repeatDelay: 1,
-        }}
+        variants={scaleUp}
+        animate={colorMode === 'dark' ? 'animate' : 'lightMode'}
       ></motion.div>
       <Logo />
       <MotionStack variants={stagger} spacing={6}>
