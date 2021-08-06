@@ -1,3 +1,10 @@
+.menu{
+  position: absolute;
+  top:0;
+  right: 3.5%;
+  z-index: 1;
+}
+
 .blogBtn{
   color: inherit;
   text-decoration: underline 0.15em rgba(255, 255, 255, 0);
@@ -12,7 +19,7 @@
 .blogBtn:focus,
 .blogBtn:active {
   text-decoration-color: #97DFFC;
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .blogBtn.dark:hover,
