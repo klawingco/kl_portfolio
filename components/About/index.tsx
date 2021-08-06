@@ -1,12 +1,50 @@
-import { Heading, useColorModeValue, Text, Stack, Link } from '@chakra-ui/react'
-import styles from './styles.module.css'
+import {
+  Heading,
+  useColorModeValue,
+  Text,
+  Stack,
+  Link,
+  List,
+  ListItem,
+  ListIcon,
+  Icon,
+  SimpleGrid,
+  Tooltip,
+  Box,
+} from '@chakra-ui/react'
+import {
+  SiDotNet,
+  SiJavascript,
+  SiTypescript,
+  SiGraphql,
+  SiReact,
+  SiNextDotJs,
+  SiDocker,
+} from 'react-icons/si'
+import { GiCoffeePot, GiDatabase } from 'react-icons/gi'
+import { IoMdOpen } from 'react-icons/io'
+import { motion } from 'framer-motion'
+// import styles from './styles.module.css'
+import { fadeInUp } from 'config/animations'
 const AboutSection = () => {
-  const surName = useColorModeValue('teal.500', 'cyan.200')
+  const emphasis = useColorModeValue('teal.500', 'cyan.200')
   const miniDesc = useColorModeValue('gray.800', 'gray.400')
+  const currentYear = new Date().getFullYear()
+  const codingYears = currentYear - 2011
+  const professionalYears = currentYear - 2016
+  const MotionStack = motion(Stack)
   return (
-    <Stack width="60%" spacing={6}>
+    <MotionStack
+      initial={fadeInUp.initial}
+      variants={fadeInUp}
+      animate="animate"
+      width={{ base: '100%', lg: '60%' }}
+      height="100%"
+      spacing={6}
+    >
       <Heading
-        as="h5"
+        id="aboutMe"
+        as="h4"
         size="lg"
         paddingRight="20"
         textTransform="uppercase"
@@ -15,21 +53,110 @@ const AboutSection = () => {
         About Me
       </Heading>
       <Text color={miniDesc}>
-        My journey to becoming developer started back at 2011 as a teenager,
-        when I got myself into C# and php from my old slow laptop. Since then I
-        enjoy creating logical stuff at backend. I even have a embarrasing{' '}
-        <Link href="https://otakuprogrammer.wordpress.com/" color={surName}>
+        My nickname is{' '}
+        <Tooltip
+          label="Yes. I am one of those people with really weird nickname, you see.."
+          aria-label="Why KL?"
+          hasArrow
+        >
+          <Text as="span" color={emphasis}>
+            <b>KL</b>
+          </Text>
+        </Tooltip>
+        , and my journey to becoming developer started back at 2011 as a
+        teenager, when I got myself into C# and PHP using my old slow laptop.
+        Eversince then I mostly enjoyed creating logical stuff, freelancing
+        desktop apps, games and websites for lunch pack pennies. I even have a
+        embarrasing anime{' '}
+        <Link
+          href="https://otakuprogrammer.wordpress.com/"
+          target="_blank"
+          color={emphasis}
+        >
           wordpress site
         </Link>{' '}
         back then.
       </Text>
       <Text color={miniDesc}>
-        Right now I am working as a Full Stack Developer mostly on architecture,
-        apis, nitty gritty business logics and even front end integration stuff
-        now, how time flies! Though I am still trying to learn more about UI/UX
-        as of now.
+        Almost {codingYears} years later and {professionalYears} years of
+        professional work, Right now I am working mostly as a{' '}
+        <b>Full Stack Developer</b> focuses on <b>architecture</b>,{' '}
+        <b>backend APIs</b>,{' '}
+        <Tooltip
+          label="Ha!. Or more accurately TECH DEBT"
+          aria-label="Tech Dect?"
+          hasArrow
+        >
+          <Text as="span" color={emphasis}>
+            <b>nitty-gritty business logics</b>
+          </Text>
+        </Tooltip>{' '}
+        and even front end integration stuff now, how time flies!
       </Text>
-    </Stack>
+      <Text color={miniDesc}>
+        Here are some main techs that are cup of my{' '}
+        <Tooltip
+          label="I only drink tea if I needed too!"
+          aria-label="I hate Tea!"
+          hasArrow
+        >
+          <Text as="span" color={emphasis} textDecorationLine="line-through">
+            tea...
+          </Text>
+        </Tooltip>{' '}
+        err.. no. coffee <Icon as={GiCoffeePot} color={emphasis} />.
+      </Text>
+
+      <SimpleGrid columns={2} spacing={4}>
+        <List spacing={3}>
+          <ListItem fontSize="small" display="flex" alignItems="center">
+            <ListIcon as={SiDotNet} color={emphasis} fontSize="2em" />
+            C# - .NET.Core
+          </ListItem>
+          <ListItem fontSize="small" display="flex" alignItems="center">
+            <ListIcon as={SiJavascript} color={emphasis} fontSize="2em" />
+            Javascript (ES6+)
+          </ListItem>
+          <ListItem fontSize="small" display="flex" alignItems="center">
+            <ListIcon as={SiTypescript} color={emphasis} fontSize="2em" />
+            Typescript
+          </ListItem>
+
+          <ListItem fontSize="small" display="flex" alignItems="center">
+            <ListIcon as={GiDatabase} color={emphasis} fontSize="2em" />
+            RDBMS - NoSQL
+          </ListItem>
+        </List>
+        <List spacing={3}>
+          <ListItem fontSize="small" display="flex" alignItems="center">
+            <ListIcon as={SiGraphql} color={emphasis} fontSize="2em" />
+            Graphql
+          </ListItem>
+          <ListItem fontSize="small" display="flex" alignItems="center">
+            <ListIcon as={SiReact} color={emphasis} fontSize="2em" />
+            React
+          </ListItem>
+          <ListItem fontSize="small" display="flex" alignItems="center">
+            <ListIcon as={SiNextDotJs} color={emphasis} fontSize="2em" />
+            NextJS
+          </ListItem>
+          <ListItem fontSize="small" display="flex" alignItems="center">
+            <ListIcon as={SiDocker} color={emphasis} fontSize="2em" />
+            Docker
+          </ListItem>
+        </List>
+        <Box>
+          <Text
+            as="button"
+            color={emphasis}
+            fontSize="smaller"
+            textAlign="left"
+          >
+            Want to see my full arsenal? <Icon as={IoMdOpen} />
+          </Text>
+        </Box>
+      </SimpleGrid>
+    </MotionStack>
   )
 }
 export default AboutSection

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import {
   Stack,
   Heading,
@@ -63,7 +62,7 @@ const Sidebar = () => {
         <MotionHeading
           as="h1"
           size="2xl"
-          paddingRight="20"
+          paddingRight={{ lg: '20' }}
           textTransform="uppercase"
           variants={fadeInUp}
         >
@@ -103,7 +102,7 @@ const Sidebar = () => {
         <MotionText
           color={miniDesc}
           fontSize="small"
-          paddingRight="12"
+          paddingRight={{ lg: '12' }}
           variants={fadeInUp}
         >
           Hey! How nice of you to look at my personal site,
@@ -139,6 +138,8 @@ const Sidebar = () => {
             _hover={{
               color: thankYou,
             }}
+            aria-label="twitter"
+            rel="noreferrer"
             width={8}
             href="https://twitter.com/keysl1831"
             target="_blank"
@@ -149,6 +150,8 @@ const Sidebar = () => {
             _hover={{
               color: thankYou,
             }}
+            aria-label="linkedin"
+            rel="noreferrer"
             width={8}
             href="https://www.linkedin.com/in/marclawingco/"
             target="_blank"
@@ -159,6 +162,8 @@ const Sidebar = () => {
             _hover={{
               color: thankYou,
             }}
+            aria-label="stack overflow"
+            rel="noreferrer"
             width={8}
             href="https://stackoverflow.com/users/3867490/keysl"
             target="_blank"
@@ -169,6 +174,8 @@ const Sidebar = () => {
             _hover={{
               color: thankYou,
             }}
+            aria-label="youtube"
+            rel="noreferrer"
             width={8}
             href="https://www.youtube.com/channel/UCV-MiUVsKJrKJKKfUK58nhg"
             target="_blank"
@@ -179,6 +186,8 @@ const Sidebar = () => {
             _hover={{
               color: thankYou,
             }}
+            aria-label="github"
+            rel="noreferrer"
             width={8}
             href="https://github.com/klawingco"
             target="_blank"
@@ -189,6 +198,8 @@ const Sidebar = () => {
             _hover={{
               color: thankYou,
             }}
+            aria-label="dev.to"
+            rel="noreferrer"
             width={8}
             href="https://dev.to/klawingco"
             target="_blank"

@@ -8,6 +8,12 @@ body {
    overflow-y: hidden;
 }
 
+@media (max-width: 480px) {
+  body{
+    overflow-y: scroll;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;

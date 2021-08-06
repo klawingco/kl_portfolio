@@ -75,43 +75,30 @@ const scaleUp = {
   },
 }
 
-// const sidebarAnimation = {
-//   loading: {
-//     scale: [1, 1.05, 1],
-//     opacity: 1,
-//     transition: {
-//       duration: DURATIONS.VerySlow,
-//       ease: easing,
-//     },
-//   },
-//   idle: {
-//     scale: [1, 1.05, 1],
-//     opacity: [1, 0.65, 1],
-//     transition: {
-//       duration: 3,
-//       ease: easing,
-//       loop: Infinity,
-//       repeatDelay: 1,
-//     },
-//   },
-// }
-// const sideBarBorder = {
-//   initial: {
-//     opacity: 0,
-//     x: -100,
-//   },
-//   animate: {
-//     x: 0,
-//     scale: [1, 1.05, 1],
-//     opacity: [1, 0.65, 1],
-//     transition: {
-//       duration: 3,
-//       ease: easing,
-//       loop: Infinity,
-//       repeatDelay: 1,
-//     },
-//   },
-// }
+const menuAnim = {
+  initial: {
+    opacity: 0,
+    y: -50,
+  },
+  initialHidden: {
+    opacity: 1,
+    y: 0,
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      ease: easing,
+    },
+  },
+  hide: {
+    y: -50,
+    opacity: 0,
+    transition: {
+      ease: easing,
+    },
+  },
+}
 
 const stagger = {
   animate: {
@@ -128,5 +115,6 @@ export {
   letterSpace,
   stagger,
   simpleOpacity,
+  menuAnim,
   scaleUp,
 }
