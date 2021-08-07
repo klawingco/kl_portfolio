@@ -12,6 +12,7 @@ import {
 import { motion } from 'framer-motion'
 import {
   FaGithub,
+  FaInstagram,
   FaLinkedin,
   FaStackOverflow,
   FaTwitter,
@@ -143,6 +144,18 @@ const Sidebar = () => {
             target="_blank"
           >
             <Icon w={6} h={6} as={FaTwitter} color="currentColor" />
+          </Link>
+          <Link
+            _hover={{
+              color: thankYou,
+            }}
+            aria-label="instagram"
+            rel="noreferrer"
+            width={8}
+            href="https://www.instagram.com/kllawingco/"
+            target="_blank"
+          >
+            <Icon w={6} h={6} as={FaInstagram} color="currentColor" />
           </Link>
           <Link
             _hover={{
