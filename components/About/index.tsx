@@ -80,8 +80,8 @@ const AboutSection = () => {
         back then.
       </Text>
       <Text color={miniDesc}>
-        Almost {codingYears} years later and {professionalYears} years of
-        professional work, Right now I am working mostly as a{' '}
+        Almost {codingYears} years later and {professionalYears} years of it as
+        professional work, Right now I am working as a{' '}
         <b>Full Stack Developer</b> focuses on <b>architecture</b>,{' '}
         <b>backend APIs</b>,{' '}
         <Tooltip
@@ -154,7 +154,7 @@ const AboutSection = () => {
             fontSize="smaller"
             textAlign="left"
           >
-            Want to see my full arsenal? <Icon as={IoMdOpen} />
+            See my full arsenal <Icon as={IoMdOpen} />
           </Text>
         </Box>
       </SimpleGrid>
