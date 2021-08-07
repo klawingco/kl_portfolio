@@ -19,7 +19,6 @@ import {
   FaDev,
 } from 'react-icons/fa'
 import styles from './styles.module.css'
-import Logo from 'components/Logo'
 import {
   fadeInUp,
   letterSpace,
@@ -49,7 +48,6 @@ const Sidebar = () => {
         variants={scaleUp}
         animate={colorMode === 'dark' ? 'animate' : 'lightMode'}
       ></motion.div>
-      <Logo />
       <MotionStack variants={stagger} spacing={6}>
         <MotionText
           variants={fadeInUp}

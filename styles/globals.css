@@ -6,6 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
    */
    overflow-y: hidden;
+   /* overflow-x: hidden; */
 }
 
 @media (max-width: 480px) {
