@@ -5,7 +5,7 @@ import { simpleOpacity } from 'config/animations'
 
 const Avatar = () => {
   const MotionBox = motion(Box)
-    const emphasis = useColorModeValue('teal.500', 'cyan.200')
+  const emphasis = useColorModeValue('teal.500', 'cyan.200')
   const subTextcolor = useColorModeValue('gray.800', 'gray.400')
   return (
     <MotionBox
