@@ -72,6 +72,8 @@ const AboutSection = () => {
           href="https://otakuprogrammer.wordpress.com/"
           target="_blank"
           color={emphasis}
+          aria-label="The Otaku Programmer"
+          rel="noreferrer"
         >
           wordpress site
         </Link>{' '}

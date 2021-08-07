@@ -6,9 +6,11 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 import Head from 'next/head'
+
 import Menu from 'components/Menu'
 import Sidebar from 'components/Sidebar'
 import About from 'components/About'
+import Avatar from 'components/Avatar'
 
 const Portfolio = (): JSX.Element => {
   const variant = useBreakpointValue({ base: '5', md: '8', lg: '14' })
@@ -23,9 +25,6 @@ const Portfolio = (): JSX.Element => {
           name="description"
           content="My personal solace place on web-earth."
         />
-        <link rel="icon" href="/favicon.ico" />
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Menu />
       <Grid
@@ -53,12 +52,21 @@ const Portfolio = (): JSX.Element => {
           as="main"
           padding={mainContent}
           rowSpan={2}
-          colSpan={{ base: 1, lg: 3 }}
+          colSpan={{ base: 1, sm: 1, md: 1, lg: 3 }}
           overflowY={{ base: 'unset', lg: 'scroll' }}
         >
           <Stack w="100" spacing={24}>
-            <Box minH={{ lg: '100vh' }} display="flex" alignItems="center">
+            <Box
+              minH={{ lg: '100vh' }}
+              display="flex"
+              alignItems="center"
+              flexDirection={{
+                base: 'column-reverse',
+                lg: 'row',
+              }}
+            >
               <About />
+              <Avatar />
             </Box>
             <Box>
               <About />

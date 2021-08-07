@@ -80,20 +80,9 @@ const menuAnim = {
     opacity: 0,
     y: -50,
   },
-  initialHidden: {
-    opacity: 1,
-    y: 0,
-  },
   show: {
     y: 0,
     opacity: 1,
-    transition: {
-      ease: easing,
-    },
-  },
-  hide: {
-    y: -50,
-    opacity: 0,
     transition: {
       ease: easing,
     },

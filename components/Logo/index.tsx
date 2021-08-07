@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { useColorMode, Image } from '@chakra-ui/react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -10,24 +11,14 @@ const Logo = () => {
   const MotionImage = motion(Image)
   return (
     <Link href="/" passHref>
-      <motion.div
-        animate={{
-          opacity: [1, 0.75, 1],
-        }}
-        transition={{
-          duration: 3,
-          ease: 'easeInOut',
-          loop: Infinity,
-          repeatDelay: 1,
-        }}
-      >
+      <motion.div initial="initial" animate="animate">
         {colorMode === ThemeMode.Dark ? (
           <MotionImage
             className={styles.logo}
             boxSize="50px"
             objectFit="cover"
             src="./logo.png"
-            alt="KL Lawingco"
+            alt="KL Lawingco Logo"
             fallbackSrc="./logo.png"
             variants={simpleOpacity}
           />
@@ -38,7 +29,7 @@ const Logo = () => {
             objectFit="cover"
             src="./logo_light.png"
             fallbackSrc="./logo_light.png"
-            alt="KL Lawingco"
+            alt="KL Lawingco Logo"
             variants={simpleOpacity}
           />
         )}
@@ -47,4 +38,4 @@ const Logo = () => {
   )
 }
 
-export default Logo
+export default memo(Logo)

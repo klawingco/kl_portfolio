@@ -12,6 +12,7 @@ import {
 import { motion } from 'framer-motion'
 import {
   FaGithub,
+  FaInstagram,
   FaLinkedin,
   FaStackOverflow,
   FaTwitter,
@@ -19,7 +20,6 @@ import {
   FaDev,
 } from 'react-icons/fa'
 import styles from './styles.module.css'
-import Logo from 'components/Logo'
 import {
   fadeInUp,
   letterSpace,
@@ -49,7 +49,6 @@ const Sidebar = () => {
         variants={scaleUp}
         animate={colorMode === 'dark' ? 'animate' : 'lightMode'}
       ></motion.div>
-      <Logo />
       <MotionStack variants={stagger} spacing={6}>
         <MotionText
           variants={fadeInUp}
@@ -145,6 +144,18 @@ const Sidebar = () => {
             target="_blank"
           >
             <Icon w={6} h={6} as={FaTwitter} color="currentColor" />
+          </Link>
+          <Link
+            _hover={{
+              color: thankYou,
+            }}
+            aria-label="instagram"
+            rel="noreferrer"
+            width={8}
+            href="https://www.instagram.com/kllawingco/"
+            target="_blank"
+          >
+            <Icon w={6} h={6} as={FaInstagram} color="currentColor" />
           </Link>
           <Link
             _hover={{

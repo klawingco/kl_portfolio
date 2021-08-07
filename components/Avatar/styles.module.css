@@ -1,0 +1,8 @@
+.fallbackLoader{
+    width: 250px;
+    height: 250px;
+    border-radius: 250px;
+    border-color: transparent;
+    border-right-color: #97DFFC;
+    border-width: 3px;
+}
