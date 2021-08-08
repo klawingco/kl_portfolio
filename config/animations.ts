@@ -89,6 +89,24 @@ const menuAnim = {
   },
 }
 
+const avatarAnimation = {
+  initial: {
+    opacity: 0,
+    y: 60,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: DURATIONS.Fast,
+      ease: easing,
+    },
+  },
+  exit: {
+    opacity: 0,
+  },
+}
+
 const stagger = {
   animate: {
     transition: {
@@ -106,4 +124,5 @@ export {
   simpleOpacity,
   menuAnim,
   scaleUp,
+  avatarAnimation,
 }

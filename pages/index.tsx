@@ -64,7 +64,7 @@ const Portfolio = (): JSX.Element => {
           as="main"
           padding={mainContent}
           rowSpan={2}
-          colSpan={{ base: 1, sm: 1, md: 1, lg: 3 }}
+          colSpan={{ base: 2, sm: 2, md: 1, lg: 3 }}
           overflowY={{ base: 'unset', lg: 'scroll' }}
         >
           <Stack w="100" spacing={24}>

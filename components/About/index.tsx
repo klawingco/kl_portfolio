@@ -24,7 +24,6 @@ import {
 import { GiCoffeePot, GiDatabase } from 'react-icons/gi'
 import { IoMdOpen } from 'react-icons/io'
 import { motion } from 'framer-motion'
-// import styles from './styles.module.css'
 import { fadeInUp } from 'config/animations'
 const AboutSection = () => {
   const emphasis = useColorModeValue('teal.500', 'cyan.200')
@@ -65,8 +64,8 @@ const AboutSection = () => {
         </Tooltip>
         , and my journey to becoming developer started back at 2011 as a
         teenager, when I got myself into C# and PHP using my old slow laptop.
-        Eversince then I mostly enjoyed creating logical stuff, freelancing
-        desktop apps, games and websites for lunch pack pennies. I even have a
+        Eversince then I enjoyed creating logical stuff, freelancing desktop
+        apps, games and websites for lunch pack pennies. I even have a
         embarrasing anime{' '}
         <Link
           href="https://otakuprogrammer.wordpress.com/"
@@ -86,17 +85,17 @@ const AboutSection = () => {
         <b>backend APIs</b>,{' '}
         <Tooltip
           label="Ha!. Or more accurately TECH DEBT"
-          aria-label="Tech Dect?"
+          aria-label="Tech Debt?"
           hasArrow
         >
           <Text as="span" color={emphasis}>
             <b>nitty-gritty business logics</b>
           </Text>
         </Tooltip>{' '}
-        and even front end integration stuff now, how time flies!
+        and even <b>front end integration</b> stuff now, how time flies!
       </Text>
       <Text color={miniDesc}>
-        Here are some main techs that are cup of my{' '}
+        Here are few main techs that are cup of my{' '}
         <Tooltip
           label="I only drink tea if I needed too!"
           aria-label="I hate Tea!"
