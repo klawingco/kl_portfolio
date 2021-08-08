@@ -1,27 +1,10 @@
-/* 
-.sidebar{
-  border: 3px solid #97DFFC;
-  border-radius: 100%;
-  height: 120vh;
-  width: 50vw;
-  position: absolute;
-  left: -15%;
-  top: -10%;
-  z-index: -1;
+.mainContent::-webkit-scrollbar{
+ width: 0.5em;
 }
-.dark{
-  border: 3px solid black;
+.mainContent::-webkit-scrollbar-track-piece{
+  width: 10px;
 }
-.logo{
-  position: absolute;
-  top: 3%;
-  left: 3.5%;
-  cursor: pointer;
+.mainContent::-webkit-scrollbar-thumb{
+  background: var(--chakra-colors-gray-600);
+  border-radius: 1em;
 }
-
-.marginTopForce{
-  margin-top: 0 !important;
-}
-.marginTopSmall{
-  margin-top: 12px !important;
-} */
