@@ -93,25 +93,15 @@ const SkillSetModal = ({ isOpen, onClose }: ISkillSetModal) => {
         <ModalHeader>Full Skill Set List</ModalHeader>
         <ModalCloseButton />
         <ModalBody className={styles.skillModal}>
-          <SkillList title="Backend centric" columns={backendCols} />
-          <SkillList title="Frontend centric" columns={frontendCols} />
+          <SkillList title="Backend Centric" columns={backendCols} />
+          <SkillList title="Frontend Centric" columns={frontendCols} />
           <SkillList title="CICD centric" columns={cicdCols} />
-          <SkillList
-            title="Database and Streams centric"
-            columns={dataBaseCols}
-          />
-          <SkillList title="Ui Frameworks centric" columns={uiFrameWorkCols} />
-          <SkillList
-            title="Productivity boost centric"
-            columns={productivityCols}
-          />
-          <SkillList
-            title="Productivity boost centric"
-            columns={productivityCols}
-          />
-          <SkillList title="Mobile Development centric" columns={mobileCols} />
-          <SkillList title="Game Development centric" columns={gameCols} />
-          <SkillList title="Desktop App centric" columns={desktopCols} />
+          <SkillList title="Database and Streams" columns={dataBaseCols} />
+          <SkillList title="Ui Frameworks" columns={uiFrameWorkCols} />
+          <SkillList title="Mobile Development" columns={mobileCols} />
+          <SkillList title="Game Development" columns={gameCols} />
+          <SkillList title="Desktop App" columns={desktopCols} />
+          <SkillList title="Productivity boosts" columns={productivityCols} />
         </ModalBody>
         <ModalFooter>
           <Text fontSize="x-small">*Some micro frameworks not included </Text>
