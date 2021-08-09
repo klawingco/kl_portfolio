@@ -8,6 +8,7 @@ import {
   Link,
   Box,
   Icon,
+  useBreakpointValue,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import {
@@ -33,7 +34,7 @@ const Sidebar = () => {
   const surName = useColorModeValue('teal.500', 'cyan.200')
   const miniDesc = useColorModeValue('gray.800', 'gray.400')
   const thankYou = useColorModeValue('teal.500', 'cyan.200')
-
+  const display = useBreakpointValue({ base: 'none', lg: 'block' })
   const MotionHeading = motion(Heading)
   const MotionText = motion(Text)
   const MotionStack = motion(Stack)
@@ -43,13 +44,15 @@ const Sidebar = () => {
   return (
     <motion.div initial="initial" animate="animate">
       <motion.div
+        id="sidebarCircle"
         className={`${styles.sidebar} ${
           colorMode === 'light' ? styles.dark : ''
         }`}
         variants={scaleUp}
+        style={{ display: display }}
         animate={colorMode === 'dark' ? 'animate' : 'lightMode'}
       ></motion.div>
-      <MotionStack variants={stagger} spacing={6}>
+      <MotionStack variants={stagger} spacing={6} w="100">
         <MotionText
           variants={fadeInUp}
           delay={1}

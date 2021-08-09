@@ -6,13 +6,6 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
    */
    overflow-y: hidden;
-   /* overflow-x: hidden; */
-}
-
-@media (max-width: 480px) {
-  body{
-    overflow-y: scroll;
-  }
 }
 
 a {
@@ -23,3 +16,60 @@ a {
 * {
   box-sizing: border-box;
 }
+
+body::-webkit-scrollbar{
+ width: 0.4em;
+}
+body::-webkit-scrollbar-track-piece{
+  width: 10px;
+}
+body::-webkit-scrollbar-thumb{
+  background: var(--chakra-colors-gray-600);
+  border-radius: 1em;
+}
+
+/* Fallback */
+@media (max-width: 1279px) { 
+  body{
+    overflow-y: scroll;
+  }
+  aside{
+    max-width: 50%;
+  }
+  main{
+    overflow-y: unset  !important;
+  }
+  #mainGrid{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 0);
+  }
+  .contentRow{
+    min-height: auto !important;
+  }  
+}
+/* Tablet Support */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  body{
+    overflow-y: scroll !important;
+  }         
+  #mainGrid{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 0);
+  }
+  main{
+    overflow-y: unset  !important;
+  }
+  #sidebarCircle{
+    display: none !important;
+  }
+  .contentRow{
+    min-height: auto !important;
+    padding: var(--chakra-space-14);
+    justify-content: center;
+  }
+}
+

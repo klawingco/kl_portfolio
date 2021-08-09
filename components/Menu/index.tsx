@@ -46,7 +46,7 @@ const Menu = () => {
       <MotionContainer
         width="100%"
         backgroundColor={bg}
-        maxWidth={{ base: '100%', sm: '35%', lg: '60%' }}
+        maxWidth={{ base: '100%', sm: '35%', lg: '50%', xl: '60%' }}
         className={styles.menu}
         initial="initial"
         animate={(!isMobile || isOpen) && 'show'}

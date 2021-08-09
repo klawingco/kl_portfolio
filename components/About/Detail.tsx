@@ -87,9 +87,8 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
       </Text>
       <Text color={miniDesc}>
         Almost {codingYears} years later and {professionalYears} years of it as
-        professional work, Right now I am working as a{' '}
-        <b>Full Stack Developer</b> focuses on <b>architecture</b>,{' '}
-        <b>backend APIs</b>,{' '}
+        professional work, Right now I am working as a <b>Software Engineer</b>{' '}
+        focuses on <b>architecture</b>, <b>backend APIs</b>,{' '}
         <Tooltip
           label="Ha!. Or more accurately TECH DEBT"
           aria-label="Tech Debt?"
