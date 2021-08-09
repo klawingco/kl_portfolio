@@ -7,8 +7,9 @@ import {
   IconButton,
   useColorMode,
   useColorModeValue,
+  useBreakpointValue,
 } from '@chakra-ui/react'
-import mobile from 'is-mobile'
+// import mobile from 'is-mobile'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { motion, useCycle } from 'framer-motion'
 import Logo from '../Logo'
@@ -18,12 +19,17 @@ import { ThemeMode } from 'config/theme'
 import { easing, menuAnim } from 'config/animations'
 import useScrollDirection, { ScrollDirection } from 'hooks/useScrollDirection'
 
-const isMobile = mobile()
 const Menu = () => {
   const scrollDirection = useScrollDirection()
   const MotionContainer = motion(Container)
   const { toggleColorMode, colorMode } = useColorMode()
   const bg = useColorModeValue('gray.100', 'black')
+  const isMobile = useBreakpointValue({
+    base: true,
+    md: true,
+    lg: true,
+    xl: false,
+  })
 
   const [isOpen, toggleOpen] = useCycle(false, true)
 

@@ -3,11 +3,11 @@ import * as React from 'react'
 import { motion } from 'framer-motion'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Path = (props: any, isDarkMode = false) => (
+const Path = (props: any) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke={isDarkMode ? 'hsl(188, 88%, 80%)' : 'hsl(0, 0%, 7%)'}
+    stroke={props?.isDarkMode ? 'hsl(240, 100%, 94%)' : 'hsl(0, 0%, 7%)'}
     strokeLinecap="round"
     {...props}
   />

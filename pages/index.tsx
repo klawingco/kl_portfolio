@@ -9,13 +9,19 @@ import Head from 'next/head'
 
 import Menu from 'components/Menu'
 import Sidebar from 'components/Sidebar'
-import About from 'components/About'
+import About from 'components/Sections/About'
+import Experience from 'components/Sections/Experience'
 import Avatar from 'components/Avatar'
 import styles from 'styles/Home.module.css'
 
 const Portfolio = (): JSX.Element => {
-  const variant = useBreakpointValue({ base: '5', md: '8', lg: '14' })
-  const mainContent = useBreakpointValue({ base: '5', md: '0', lg: '0' })
+  const sideBarPadding = useBreakpointValue({ base: '5', md: '8', lg: '14' })
+  const mainContent = useBreakpointValue({
+    base: '5',
+    md: '14',
+    lg: '14',
+    xl: 0,
+  })
   const paddTop = useBreakpointValue({ base: '20', sm: 20, md: 20 })
 
   return (
@@ -55,7 +61,7 @@ const Portfolio = (): JSX.Element => {
         gap={4}
       >
         <GridItem
-          padding={variant}
+          padding={sideBarPadding}
           marginTop={paddTop}
           rowSpan={2}
           colSpan={{ base: 1, sm: 1, md: 1, lg: 1, xl: 2 }}
@@ -80,7 +86,12 @@ const Portfolio = (): JSX.Element => {
               minH={{ lg: '100vh' }}
               display="flex"
               alignItems="center"
-              justifyContent={{ base: 'unset', lg: 'center' }}
+              justifyContent={{
+                base: 'unset',
+                md: 'flex-start',
+                lg: 'flex-start',
+                xl: 'center',
+              }}
               paddingTop={{ base: 0, lg: 20, xl: 0 }}
               flexDirection={{
                 base: 'column-reverse',
@@ -99,7 +110,7 @@ const Portfolio = (): JSX.Element => {
                 lg: 'row',
               }}
             >
-              <About />
+              <Experience />
             </Box>
           </Stack>
         </GridItem>
