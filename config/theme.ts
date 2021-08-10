@@ -38,5 +38,12 @@ const theme = extendTheme({
   },
   colors,
   styles,
+  components: {
+    Link: {
+      baseStyle: (props) => ({
+        color: mode('teal.500', 'cyan.200')(props),
+      }),
+    },
+  },
 })
 export default theme

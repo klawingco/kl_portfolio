@@ -56,7 +56,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
         textTransform="uppercase"
         letterSpacing={1.8}
       >
-        About Me
+        About Me.
       </Heading>
       <Text color={miniDesc}>
         My nickname is{' '}

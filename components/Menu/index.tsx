@@ -99,6 +99,9 @@ const Menu = () => {
               fontSize="md"
               letterSpacing={2}
               className={btnClassName}
+              as="a"
+              href="#aboutMe"
+              rel="noreferrer"
             >
               About
             </Button>
@@ -111,6 +114,9 @@ const Menu = () => {
               fontSize="md"
               letterSpacing={2}
               className={btnClassName}
+              as="a"
+              href="#myExperiences"
+              rel="noreferrer"
             >
               Works
             </Button>

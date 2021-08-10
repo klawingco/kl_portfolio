@@ -48,7 +48,6 @@ export type SkillCategory =
   | 'mobile'
   | 'games'
   | 'desktop'
-//   | 'arts'
 
 export type Skill = {
   name: string
