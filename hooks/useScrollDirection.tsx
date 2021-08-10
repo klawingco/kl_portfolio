@@ -11,6 +11,9 @@ const useScrollDirection = () => {
 
   useEffect(() => {
     const container = document.querySelector('main')
+    const avatarContainer = document.querySelector('#klAvatar') as HTMLElement
+    const avatarScrollY =
+      avatarContainer?.offsetTop + avatarContainer.clientHeight
     const threshold = 0
     let lastScrollY = container?.scrollTop || 0
 
@@ -18,12 +21,16 @@ const useScrollDirection = () => {
 
     const updateScrollDir = () => {
       const scrollY = container?.scrollTop || 0
+
       if (Math.abs(scrollY - lastScrollY) < threshold) {
         ticking = false
         return
       }
+
       const currentScrollDirection =
-        scrollY > lastScrollY ? ScrollDirection.Down : ScrollDirection.Up
+        scrollY > lastScrollY && scrollY > avatarScrollY
+          ? ScrollDirection.Down
+          : ScrollDirection.Up
 
       if (currentScrollDirection !== scrollDir) {
         setScrollDir(

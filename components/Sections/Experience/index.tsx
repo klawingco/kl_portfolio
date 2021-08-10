@@ -16,12 +16,7 @@ const DetailSection = () => {
       height="100%"
       spacing={6}
     >
-      <Heading
-        id="myExperiences"
-        size="lg"
-        paddingRight="20"
-        textTransform="uppercase"
-      >
+      <Heading id="myExperiences" size="lg" textTransform="uppercase">
         Places I’ve worked.
       </Heading>
       <Text color={miniDesc}>
