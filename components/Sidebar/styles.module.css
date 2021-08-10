@@ -20,6 +20,12 @@
     min-width: auto;
   }
 }
+@media (max-width: 1280px) {
+  .sidebar{
+  left: -18%;
+
+  }
+}
 .dark{
   border: 3px solid black;
   border-left-color: transparent;

@@ -24,6 +24,7 @@ const Portfolio = (): JSX.Element => {
     xl: 0,
   })
   const paddTop = useBreakpointValue({ base: '20', sm: 20, md: 20 })
+  const mainGridHeight = useBreakpointValue({ base: '100%', xl: '100vh' })
 
   return (
     <>
@@ -49,7 +50,7 @@ const Portfolio = (): JSX.Element => {
       <Menu />
       <Grid
         id="mainGrid"
-        h="100vh"
+        h={mainGridHeight}
         templateColumns={{
           base: 'repeat(1, 1fr)',
           lg: 'repeat(3, 1fr)',

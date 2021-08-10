@@ -27,23 +27,29 @@ const Menu = () => {
   const isMobile = useBreakpointValue({
     base: true,
     md: true,
-    lg: true,
+    lg: false,
     xl: false,
   })
 
   const [isOpen, toggleOpen] = useCycle(false, true)
-
   const IsDark = colorMode === ThemeMode.Dark
   const Icon = IsDark ? SunIcon : MoonIcon
   const btnClassName = `${styles.blogBtn} ${!IsDark && styles.dark}`
 
   return (
-    <Container width="100vw" maxWidth="100vw" padding={0} margin={0}>
+    <Container
+      className={isMobile ? styles.menuCont : ''}
+      backgroundColor={isMobile ? bg : 'transparent'}
+      width="100vw"
+      maxWidth="100vw"
+      padding={0}
+      margin={0}
+    >
       <Logo />
       <Box
         display={{ base: 'block', lg: 'none' }}
         paddingTop={1}
-        className={styles.menu}
+        className={styles.menuBar}
         zIndex={100}
         top="3%"
       >

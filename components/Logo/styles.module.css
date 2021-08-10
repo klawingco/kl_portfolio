@@ -4,6 +4,11 @@
   left: 3.5%;
   cursor: pointer;
 }
+.logoMobile{
+   position: absolute;
+   top: 1em;
+   left: 3.5%;
+}
 .sidebar{
   border: 3px solid #97DFFC;
   border-radius: 100%;

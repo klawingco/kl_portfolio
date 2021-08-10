@@ -43,6 +43,7 @@ const Avatar = () => {
   return (
     <AnimatePresence>
       <MotionBox
+        id="klAvatar"
         boxSize={{ base: 64, lg: 'sm' }}
         padding={{ base: 8 }}
         marginBottom={{ base: 10, md: 0, lg: 0 }}
