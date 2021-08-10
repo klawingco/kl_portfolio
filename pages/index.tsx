@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Grid,
   GridItem,
@@ -68,7 +69,8 @@ const Portfolio = (): JSX.Element => {
           display="flex"
           alignContent="center"
           alignItems="center"
-          as="aside"
+          as="div"
+          flexDirection={'row'}
         >
           <Sidebar />
         </GridItem>
@@ -105,10 +107,7 @@ const Portfolio = (): JSX.Element => {
               className="contentRow"
               minH={{ lg: '100vh' }}
               paddingTop={{ base: 0, lg: 20, xl: 0 }}
-              flexDirection={{
-                base: 'column-reverse',
-                lg: 'row',
-              }}
+              flexDirection={'row'}
             >
               <Experience />
             </Box>

@@ -11,15 +11,6 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import {
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaStackOverflow,
-  FaTwitter,
-  FaYoutube,
-  FaDev,
-} from 'react-icons/fa'
 import styles from './styles.module.css'
 import {
   fadeInUp,
@@ -28,6 +19,7 @@ import {
   stagger,
   scaleUp,
 } from 'config/animations'
+import { SocialMedias } from 'config/sidebar'
 const Sidebar = () => {
   const { colorMode } = useColorMode()
   const catchPhrase = useColorModeValue('black.400', 'cyan.200')
@@ -35,6 +27,7 @@ const Sidebar = () => {
   const miniDesc = useColorModeValue('gray.800', 'gray.400')
   const thankYou = useColorModeValue('teal.500', 'cyan.200')
   const display = useBreakpointValue({ base: 'none', lg: 'block' })
+  const surNameSize = useBreakpointValue({ base: '3xl', md: '4xl' })
   const MotionHeading = motion(Heading)
   const MotionText = motion(Text)
   const MotionStack = motion(Stack)
@@ -42,7 +35,7 @@ const Sidebar = () => {
   const MotionBox = motion(Box)
 
   return (
-    <motion.div initial="initial" animate="animate">
+    <MotionBox initial="initial" animate="animate" width="100%">
       <motion.div
         id="sidebarCircle"
         className={`${styles.sidebar} ${
@@ -72,7 +65,7 @@ const Sidebar = () => {
         </MotionHeading>
         <MotionHeading
           as="h2"
-          size="4xl"
+          size={surNameSize}
           color={surName}
           className={styles.marginTopForce}
           textTransform="uppercase"
@@ -136,93 +129,26 @@ const Sidebar = () => {
         </MotionButton>
 
         <MotionBox d="flex" variants={simpleOpacity} color={miniDesc}>
-          <Link
-            _hover={{
-              color: thankYou,
-            }}
-            aria-label="twitter"
-            rel="noreferrer"
-            width={8}
-            href="https://twitter.com/keysl1831"
-            target="_blank"
-          >
-            <Icon w={6} h={6} as={FaTwitter} color="currentColor" />
-          </Link>
-          <Link
-            _hover={{
-              color: thankYou,
-            }}
-            aria-label="instagram"
-            rel="noreferrer"
-            width={8}
-            href="https://www.instagram.com/kllawingco/"
-            target="_blank"
-          >
-            <Icon w={6} h={6} as={FaInstagram} color="currentColor" />
-          </Link>
-          <Link
-            _hover={{
-              color: thankYou,
-            }}
-            aria-label="linkedin"
-            rel="noreferrer"
-            width={8}
-            href="https://www.linkedin.com/in/marclawingco/"
-            target="_blank"
-          >
-            <Icon w={6} h={6} as={FaLinkedin} color="currentColor" />
-          </Link>
-          <Link
-            _hover={{
-              color: thankYou,
-            }}
-            aria-label="stack overflow"
-            rel="noreferrer"
-            width={8}
-            href="https://stackoverflow.com/users/3867490/keysl"
-            target="_blank"
-          >
-            <Icon w={6} h={6} as={FaStackOverflow} color="currentColor" />
-          </Link>
-          <Link
-            _hover={{
-              color: thankYou,
-            }}
-            aria-label="youtube"
-            rel="noreferrer"
-            width={8}
-            href="https://www.youtube.com/channel/UCV-MiUVsKJrKJKKfUK58nhg"
-            target="_blank"
-          >
-            <Icon w={6} h={6} as={FaYoutube} color="currentColor" />
-          </Link>
-          <Link
-            _hover={{
-              color: thankYou,
-            }}
-            aria-label="github"
-            rel="noreferrer"
-            width={8}
-            href="https://github.com/klawingco"
-            target="_blank"
-          >
-            <Icon w={6} h={6} as={FaGithub} color="currentColor" />
-          </Link>
-          <Link
-            _hover={{
-              color: thankYou,
-            }}
-            aria-label="dev.to"
-            rel="noreferrer"
-            width={8}
-            href="https://dev.to/klawingco"
-            target="_blank"
-          >
-            <Icon w={6} h={6} as={FaDev} color="currentColor" />
-          </Link>
+          {SocialMedias.map((socMedia) => (
+            <Link
+              color="currentcolor"
+              key={socMedia.label}
+              _hover={{
+                color: thankYou,
+              }}
+              aria-label={socMedia.label}
+              rel="noreferrer"
+              width={8}
+              href={socMedia.href}
+              target="_blank"
+              _focus={{ boxShadow: 'none' }}
+            >
+              <Icon w={6} h={6} as={socMedia.icon} color="currentColor" />
+            </Link>
+          ))}
         </MotionBox>
       </MotionStack>
-    </motion.div>
+    </MotionBox>
   )
 }
 

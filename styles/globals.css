@@ -29,6 +29,16 @@ body::-webkit-scrollbar-thumb{
 }
 
 /* Fallback */
+@media (max-width: 480px) { 
+  body::-webkit-scrollbar{
+    width: 0;
+  }
+  body::-webkit-scrollbar-track-piece{
+    width: 0;
+  }
+}
+
+/* Fallback */
 @media (max-width: 1279px) { 
   body{
     overflow-y: scroll;
