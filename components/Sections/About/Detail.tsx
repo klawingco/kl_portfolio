@@ -59,7 +59,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
         About Me.
       </Heading>
       <Text color={miniDesc}>
-        My nickname is{' '}
+        Hi!{' '}
         <Tooltip
           label="Yes. I am one of those people with really weird nickname, you see.."
           aria-label="Why KL?"
@@ -68,12 +68,11 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           <Text as="span" color={emphasis}>
             <b>KL</b>
           </Text>
-        </Tooltip>
-        , and my journey to becoming developer started back at 2011 as a
-        teenager, when I got myself into C# and PHP using my old slow laptop.
-        Eversince then I enjoyed creating logical stuff, freelancing desktop
-        apps, games and websites for lunch pack pennies. I even have a
-        embarrasing anime{' '}
+        </Tooltip>{' '}
+        here, My journey in programming started back in 2011 as a teenager, when
+        I got myself into C# and PHP using my old laptop. Eversince then I
+        started freelancing desktop apps, games and websites for lunch pack
+        pennies. I even have a embarrasing anime{' '}
         <Link
           href="https://otakuprogrammer.wordpress.com/"
           target="_blank"
@@ -87,7 +86,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
       </Text>
       <Text color={miniDesc}>
         Almost {codingYears} years later and {professionalYears} years of it as
-        professional work, Right now I am working as a <b>Software Engineer</b>{' '}
+        professional work, right now I am working as a <b>Software Engineer</b>{' '}
         focuses on <b>architecture</b>, <b>backend APIs</b>,{' '}
         <Tooltip
           label="Ha!. Or more accurately TECH DEBT"

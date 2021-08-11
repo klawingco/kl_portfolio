@@ -1,13 +1,14 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import { useColorMode, Image, useBreakpointValue } from '@chakra-ui/react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import styles from './styles.module.css'
 import { ThemeMode } from 'config/theme'
 import { simpleOpacity } from 'config/animations'
 
 const Logo = () => {
   const { colorMode } = useColorMode()
+  const [isLogoLoaded, setLogoLoaded] = useState(false)
   const MotionImage = motion(Image)
   const isMobile = useBreakpointValue({
     base: true,
@@ -16,8 +17,8 @@ const Logo = () => {
     xl: false,
   })
   return (
-    <Link href="/" passHref>
-      <motion.div initial="initial" animate="animate">
+    <AnimatePresence>
+      <Link href="/" passHref>
         {colorMode === ThemeMode.Dark ? (
           <MotionImage
             className={isMobile ? styles.logoMobile : styles.logo}
@@ -27,6 +28,9 @@ const Logo = () => {
             alt="KL Lawingco Logo"
             fallbackSrc="./logo.png"
             variants={simpleOpacity}
+            initial="initial"
+            animate={isLogoLoaded && 'animate'}
+            onLoad={() => setLogoLoaded(true)}
           />
         ) : (
           <MotionImage
@@ -37,10 +41,13 @@ const Logo = () => {
             fallbackSrc="./logo_light.png"
             alt="KL Lawingco Logo"
             variants={simpleOpacity}
+            initial="initial"
+            animate={isLogoLoaded && 'animate'}
+            onLoad={() => setLogoLoaded(true)}
           />
         )}
-      </motion.div>
-    </Link>
+      </Link>
+    </AnimatePresence>
   )
 }
 
