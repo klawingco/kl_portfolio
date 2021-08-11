@@ -14,11 +14,11 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "framer-motion": "^4",
-    "is-mobile": "^3.0.0",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-icons": "^4.2.0"
+    "react-icons": "^4.2.0",
+    "react-intersection-observer": "^8.32.0"
   },
   "devDependencies": {
     "@types/react": "17.0.15",

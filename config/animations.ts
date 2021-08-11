@@ -1,4 +1,5 @@
 const DURATIONS = {
+  VeryFast: 0.3,
   Fast: 0.6,
   Normal: 0.8,
   Slow: 1.2,
@@ -76,15 +77,24 @@ const scaleUp = {
 }
 
 const menuAnim = {
-  initial: {
-    opacity: 0,
-    y: -50,
-  },
+  // initial: {
+  //   opacity: 0,
+  //   y: -100,
+  // },
   show: {
     y: 0,
     opacity: 1,
     transition: {
       ease: easing,
+      duration: DURATIONS.VeryFast,
+    },
+  },
+  hide: {
+    opacity: 0,
+    y: -100,
+    transition: {
+      ease: easing,
+      duration: DURATIONS.VeryFast,
     },
   },
 }

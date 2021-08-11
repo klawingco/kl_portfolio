@@ -7,13 +7,15 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 import Head from 'next/head'
-
+import dynamic from 'next/dynamic'
+import styles from 'styles/Home.module.css'
 import Menu from 'components/Menu'
 import Sidebar from 'components/Sidebar'
+import Avatar from 'components/Avatar'
 import About from 'components/Sections/About'
 import Experience from 'components/Sections/Experience'
-import Avatar from 'components/Avatar'
-import styles from 'styles/Home.module.css'
+// This are on bottoms so no need to render it instantly
+const FeaturedWorks = dynamic(() => import('components/Sections/FeaturedWorks'))
 
 const Portfolio = (): JSX.Element => {
   const sideBarPadding = useBreakpointValue({ base: '5', md: '8', lg: '14' })
@@ -106,11 +108,18 @@ const Portfolio = (): JSX.Element => {
             </Box>
             <Box
               className="contentRow"
-              minH={{ lg: '100vh' }}
               paddingTop={{ base: 0, lg: 20, xl: 0 }}
               flexDirection={'row'}
             >
               <Experience />
+            </Box>
+            <Box
+              className="contentRow"
+              paddingTop={{ base: 0, lg: 20, xl: 24 }}
+              paddingBottom={{ base: 0, lg: 20, xl: 24 }}
+              flexDirection={'row'}
+            >
+              <FeaturedWorks />
             </Box>
           </Stack>
         </GridItem>
