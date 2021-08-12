@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import {
   Container,
   useColorModeValue,
@@ -18,7 +17,7 @@ const Menu = () => {
   const isMobile = useBreakpointValue({
     base: true,
     md: true,
-    lg: false,
+    lg: true,
     xl: false,
   })
   const scrollDirection = useScrollDirection(true, isMobile)

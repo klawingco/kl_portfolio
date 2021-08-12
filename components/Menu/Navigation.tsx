@@ -25,7 +25,7 @@ const Navigation = () => {
   const isMobile = useBreakpointValue({
     base: true,
     md: true,
-    lg: false,
+    lg: true,
     xl: false,
   })
 
@@ -40,7 +40,6 @@ const Navigation = () => {
   const btnClassName = `${styles.blogBtn} ${!IsDark && styles.dark}`
   const Icon = IsDark ? SunIcon : MoonIcon
   const MotionContainer = motion(Container)
-
   const onMenuItemClick = useCallback(() => {
     if (isMobile) {
       toggleOpen()
@@ -49,7 +48,7 @@ const Navigation = () => {
   return (
     <>
       <Box
-        display={{ base: 'block', lg: 'none' }}
+        display={{ base: 'block', xl: 'none' }}
         paddingTop={1}
         className={styles.menuBar}
         zIndex={100}

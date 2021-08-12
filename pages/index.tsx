@@ -14,7 +14,7 @@ import Sidebar from 'components/Sidebar'
 import Avatar from 'components/Avatar'
 import About from 'components/Sections/About'
 import Experience from 'components/Sections/Experience'
-// This are on bottoms so no need to render it instantly
+// These are on bottom sections so no need to render it instantly
 const FeaturedWorks = dynamic(() => import('components/Sections/FeaturedWorks'))
 
 const Portfolio = (): JSX.Element => {
@@ -26,7 +26,6 @@ const Portfolio = (): JSX.Element => {
     xl: 0,
   })
   const paddTop = useBreakpointValue({ base: '20', sm: 20, md: 20 })
-  const mainGridHeight = useBreakpointValue({ base: '100%', xl: '100vh' })
 
   return (
     <>
@@ -52,7 +51,6 @@ const Portfolio = (): JSX.Element => {
       <Menu />
       <Grid
         id="mainGrid"
-        h={mainGridHeight}
         templateColumns={{
           base: 'repeat(1, 1fr)',
           lg: 'repeat(3, 1fr)',
@@ -71,7 +69,6 @@ const Portfolio = (): JSX.Element => {
           colSpan={{ base: 1, sm: 1, md: 1, lg: 1, xl: 2 }}
           display="flex"
           alignContent="center"
-          alignItems="center"
           as="div"
           flexDirection={'row'}
         >
@@ -82,8 +79,8 @@ const Portfolio = (): JSX.Element => {
           padding={mainContent}
           rowSpan={2}
           colSpan={{ base: 1, sm: 2, md: 2, lg: 3, xl: 3 }}
-          overflowY={{ base: 'unset', lg: 'scroll' }}
           className={styles.mainContent}
+          overflow="hidden"
         >
           <Stack w="100" spacing={24}>
             <Box
@@ -98,6 +95,7 @@ const Portfolio = (): JSX.Element => {
                 xl: 'center',
               }}
               paddingTop={{ base: 0, lg: 20, xl: 0 }}
+              paddingX={0}
               flexDirection={{
                 base: 'column-reverse',
                 lg: 'row',
@@ -109,6 +107,7 @@ const Portfolio = (): JSX.Element => {
             <Box
               className="contentRow"
               paddingTop={{ base: 0, lg: 20, xl: 0 }}
+              paddingX={0}
               flexDirection={'row'}
             >
               <Experience />
@@ -117,6 +116,7 @@ const Portfolio = (): JSX.Element => {
               className="contentRow"
               paddingTop={{ base: 0, lg: 20, xl: 24 }}
               paddingBottom={{ base: 0, lg: 20, xl: 24 }}
+              paddingX={0}
               flexDirection={'row'}
             >
               <FeaturedWorks />

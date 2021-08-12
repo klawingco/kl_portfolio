@@ -1,6 +1,6 @@
 
 .menu, .menuBar{
-  position: absolute;
+  position: fixed;
   top:0;
   right: 3.5%;
   z-index: 1;

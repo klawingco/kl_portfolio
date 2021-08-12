@@ -13,24 +13,22 @@ const useScrollDirection = (isMobileOnly = false, isMobile = false) => {
   const [isInitialized, setIsInitialized] = useState(false)
 
   useEffect(() => {
-    const container = document.querySelector(isMobileOnly ? 'body' : 'main')
+    window.scrollY
     const avatarContainer = document.querySelector('#klAvatar') as HTMLElement
     const avatarScrollY =
       avatarContainer?.offsetTop +
       avatarContainer.clientHeight -
       AVATAR_PADD_OFFSET
     const threshold = 10
-    let lastScrollY = container?.scrollTop || 0
+    let lastScrollY = window.scrollY || 0
 
     let ticking = false
-
     const updateScrollDir = () => {
-      const scrollY = container?.scrollTop || 0
+      const scrollY = window.scrollY || 0
       if (Math.abs(scrollY - lastScrollY) < threshold) {
         ticking = false
         return
       }
-
       const isBelowAvatar = !isMobileOnly ? scrollY > avatarScrollY : true
       const currentScrollDirection =
         scrollY > lastScrollY && isBelowAvatar
@@ -53,8 +51,8 @@ const useScrollDirection = (isMobileOnly = false, isMobile = false) => {
       }
     }
 
-    if ((isMobileOnly && isMobile) || !isMobile) {
-      container?.addEventListener('scroll', onScroll)
+    if ((isMobileOnly && isMobile) || !isMobileOnly) {
+      window?.addEventListener('scroll', onScroll)
     }
 
     // Fallback for initial load
@@ -64,7 +62,7 @@ const useScrollDirection = (isMobileOnly = false, isMobile = false) => {
     }
 
     return () => {
-      container?.removeEventListener('scroll', onScroll)
+      window?.removeEventListener('scroll', onScroll)
     }
   }, [scrollDir, isMobileOnly, isMobile, isInitialized])
   return scrollDir
