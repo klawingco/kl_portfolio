@@ -51,7 +51,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
       <Heading
         id="aboutMe"
         as="h4"
-        size="lg"
+        size="xl"
         paddingRight="20"
         textTransform="uppercase"
         letterSpacing={1.8}

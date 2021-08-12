@@ -7,10 +7,6 @@ const DURATIONS = {
 }
 const easing = [0.6, -0.05, 0.01, 0.99]
 
-const silenceIsGolden = {
-  initial: {},
-}
-
 const fadeInUp = {
   initial: {
     y: 60,
@@ -126,8 +122,8 @@ const stagger = {
 }
 
 export {
+  DURATIONS,
   easing,
-  silenceIsGolden,
   fadeInUp,
   letterSpace,
   stagger,

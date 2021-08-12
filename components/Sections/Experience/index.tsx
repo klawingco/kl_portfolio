@@ -16,7 +16,7 @@ const DetailSection = () => {
       height="100%"
       spacing={6}
     >
-      <Heading id="jobs" size="lg" textTransform="uppercase">
+      <Heading id="jobs" size="xl" textTransform="uppercase">
         Places I’ve worked.
       </Heading>
       <Text color={miniDesc}>
