@@ -13,7 +13,7 @@ const Logo = () => {
   const isMobile = useBreakpointValue({
     base: true,
     md: true,
-    lg: false,
+    lg: true,
     xl: false,
   })
   return (
