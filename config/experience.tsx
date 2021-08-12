@@ -33,7 +33,15 @@ export const Experiences: {
     roles: [
       <>
         Revamping the legacy Partner Portal into a new{' '}
-        <b>Westfield Marketing Hub</b> into NextJS and Typescript.
+        <Link
+          aria-label="Westfield Marketing Hub"
+          href="https://partner.scentregroup.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Westfield Marketing Hub
+        </Link>{' '}
+        into NextJS and Typescript.
       </>,
       <>
         Worked on maintaining{' '}
@@ -80,13 +88,17 @@ export const Experiences: {
     },
     roles: [
       <>
-        Create highly scalable Japanese e-commerce sites. Most notable clients
-        were TV Tokyo, Layla EC etc using .NET Technologies.
+        Developed a Twitter Raffle Campaign / Contest Bot. With statistics
+        similar to Facebook Ads.
       </>,
       <>
         In 2019 got promoted as Senior Software Engineer and worked with Cryto
         Exchange, Smart Contracts and other APIs using several techs such as
         NodeJS, .NET Core and React.
+      </>,
+      <>
+        Create highly scalable Japanese e-commerce sites. Most notable clients
+        were TV Tokyo, Layla EC using .NET.
       </>,
       <>
         Hired at 2016, Undergone a training first with Japanese language.

@@ -30,10 +30,16 @@ const useScrollDirection = (isMobileOnly = false, isMobile = false) => {
         return
       }
       const isBelowAvatar = !isMobileOnly ? scrollY > avatarScrollY : true
-      const currentScrollDirection =
-        scrollY > lastScrollY && isBelowAvatar
-          ? ScrollDirection.Down
-          : ScrollDirection.Up
+      let currentScrollDirection = ScrollDirection.Initial
+
+      // Used to tell if menu will show or not
+      if (scrollY > lastScrollY && isBelowAvatar) {
+        currentScrollDirection = ScrollDirection.Down
+      } else if (isBelowAvatar && !isMobile) {
+        currentScrollDirection = ScrollDirection.Down
+      } else {
+        currentScrollDirection = ScrollDirection.Up
+      }
 
       if (currentScrollDirection !== scrollDir) {
         setScrollDir(

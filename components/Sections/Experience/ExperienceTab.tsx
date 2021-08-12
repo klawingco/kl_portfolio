@@ -44,22 +44,17 @@ const ExperienceTab = () => {
   })
 
   return (
-    <Tabs
-      id="experienceTabs"
-      orientation={tabOrientation}
-      isFitted
-      isLazy
-      minH="320px"
-    >
-      <TabList width={'30%'}>
+    <Tabs id="experienceTabs" orientation={tabOrientation} isLazy minH="351px">
+      <TabList width={'30%'} borderColor="transparent">
         {ExperiencesList.map((company) => (
           <Tab
             key={`Tab-${company.name}`}
             fontSize="smaller"
-            minH="95px"
+            h="120px"
             minWidth={tabMinWidth}
             boxShadow="none"
             borderColor={borderColor}
+            borderLeftWidth={tabOrientation === 'vertical' ? '4px' : '0'}
             _selected={{
               borderColor: activeBordercolor,
               boxShadow: 'none',
@@ -73,6 +68,7 @@ const ExperienceTab = () => {
                 colorMode === 'dark' ? company.logo.dark : company.logo.light
               }
               alt={company.longName}
+              maxWidth="88px"
             ></Image>
           </Tab>
         ))}
