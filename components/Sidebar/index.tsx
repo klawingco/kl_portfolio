@@ -120,8 +120,8 @@ const Sidebar = () => {
               Thank you!
             </Text>
             <br />I am software engineer that specializes at backends and
-            somewhat somewhat to extent Front end stuff, and recently found
-            myself dabbing into UX too.
+            somewhat to extent Front end stuff, and recently found myself
+            dabbing into UX too.
           </MotionText>
           <MotionButton
             size="lg"
