@@ -14,6 +14,7 @@ import Sidebar from 'components/Sidebar'
 import Avatar from 'components/Avatar'
 import About from 'components/Sections/About'
 import Experience from 'components/Sections/Experience'
+import FadeInLayout from 'components/Layout/FadeWhenVisible'
 // These are on bottom sections so no need to render it instantly
 const FeaturedWorks = dynamic(() => import('components/Sections/FeaturedWorks'))
 
@@ -83,44 +84,50 @@ const Portfolio = (): JSX.Element => {
           overflow="hidden"
         >
           <Stack w="100" spacing={24}>
-            <Box
-              className="contentRow"
-              minH={{ lg: '100vh' }}
-              display="flex"
-              alignItems="center"
-              justifyContent={{
-                base: 'unset',
-                md: 'flex-start',
-                lg: 'flex-start',
-                xl: 'center',
-              }}
-              paddingTop={{ base: 0, lg: 20, xl: 0 }}
-              paddingX={0}
-              flexDirection={{
-                base: 'column-reverse',
-                lg: 'row',
-              }}
-            >
-              <About />
-              <Avatar />
-            </Box>
-            <Box
-              className="contentRow"
-              paddingTop={{ base: 0, lg: 20, xl: 0 }}
-              paddingX={0}
-              flexDirection={'row'}
-            >
-              <Experience />
-            </Box>
-            <Box
-              className="contentRow"
-              paddingTop={{ base: 0, lg: 20, xl: 24 }}
-              paddingBottom={{ base: 0, lg: 20, xl: 24 }}
-              paddingX={0}
-              flexDirection={'row'}
-            >
-              <FeaturedWorks />
-            </Box>
+            <FadeInLayout>
+              <Box
+                className="contentRow"
+                minH={{ lg: '100vh' }}
+                display="flex"
+                alignItems="center"
+                justifyContent={{
+                  base: 'unset',
+                  md: 'flex-start',
+                  lg: 'flex-start',
+                  xl: 'center',
+                }}
+                paddingTop={{ base: 0, lg: 20, xl: 0 }}
+                paddingX={0}
+                flexDirection={{
+                  base: 'column-reverse',
+                  lg: 'row',
+                }}
+              >
+                <About />
+                <Avatar />
+              </Box>
+            </FadeInLayout>
+            <FadeInLayout>
+              <Box
+                className="contentRow"
+                paddingTop={{ base: 0, lg: 20, xl: 0 }}
+                paddingX={0}
+                flexDirection={'row'}
+              >
+                <Experience />
+              </Box>
+            </FadeInLayout>
+            <FadeInLayout>
+              <Box
+                className="contentRow"
+                paddingTop={{ base: 0, lg: 20, xl: 20 }}
+                paddingBottom={{ base: 0, lg: 20, xl: 24 }}
+                paddingX={0}
+                flexDirection={'row'}
+              >
+                <FeaturedWorks />
+              </Box>
+            </FadeInLayout>
           </Stack>
         </GridItem>
       </Grid>

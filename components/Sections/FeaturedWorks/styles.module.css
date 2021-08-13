@@ -3,4 +3,14 @@
     position: relative;
     margin: auto;
     overflow: hidden;
+    border-radius: 0.80em;
+}
+
+.featureCover{
+    /* border-top-left-radius: 1em; */
+    min-width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(63,63,64, .80) 
 }

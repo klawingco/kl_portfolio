@@ -21,8 +21,7 @@
 }
 @media (max-width: 1280px) {
   .sidebar{
-  left: -18%;
-
+    left: -66%;
   }
 }
 .dark{
