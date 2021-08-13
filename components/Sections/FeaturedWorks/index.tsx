@@ -9,17 +9,15 @@ import {
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import FeaturedCard from './FeaturedCard'
-import { fadeInUp } from 'config/animations'
+import { fadeInUpSlower, galleryStagger } from 'config/animations'
+const MotionGrid = motion(Grid)
+const MotionGridItem = motion(GridItem)
 
 const FeaturedWorksSection = () => {
   const miniDesc = useColorModeValue('gray.800', 'gray.400')
-  const MotionStack = motion(Stack)
 
   return (
-    <MotionStack
-      initial={fadeInUp.initial}
-      variants={fadeInUp}
-      animate="animate"
+    <Stack
       width={{ base: '99%', lg: '60%', xl: '73%' }}
       height="100%"
       spacing={6}
@@ -32,67 +30,64 @@ const FeaturedWorksSection = () => {
         case studies.
       </Text>
 
-      <Grid
-        templateRows="repeat(2, 1fr)"
-        templateColumns="repeat(5, 1fr)"
-        gap={0}
-        borderRadius="1em"
-        overflow="hidden"
+      <MotionGrid
+        templateRows="repeat(1, 1fr)"
+        templateColumns="repeat(6, 1fr)"
+        gap={{ base: 3, md: 4 }}
+        variants={galleryStagger}
       >
-        <GridItem colSpan={6}>
+        <MotionGridItem colSpan={6} variants={fadeInUpSlower}>
+          <FeaturedCard
+            alt="Tobira!"
+            src="/works/tobira/IphoneX-tobira.jpg"
+            height={{ base: '130px', md: '225px', '2xl': '300px' }}
+            ctaUrl="https://tobira-app-test.netlify.app/"
+            titlePosition="left-top"
+          />
+        </MotionGridItem>
+        <MotionGridItem colSpan={{ base: 6, md: 4 }} variants={fadeInUpSlower}>
           <FeaturedCard
             alt="RSV"
             src="/works/rsv.png"
-            height="320px"
+            height={{ base: '130px', md: '225px', '2xl': '320px' }}
             objectPosition="right 20%"
             ctaUrl="https://solution.rsv.ltd/jp"
+            titlePosition="left-bottom"
           />
-        </GridItem>
-        <GridItem colSpan={3}>
+        </MotionGridItem>
+
+        <MotionGridItem
+          colSpan={2}
+          rowSpan={{ base: 1, md: 1 }}
+          variants={fadeInUpSlower}
+        >
+          <FeaturedCard
+            alt="ProT KYC"
+            src="/works/prot_kyc01.png"
+            height={{ base: '220px', md: '225px', '2xl': '320px' }}
+            ctaUrl="https://tokeneckyc.blotocol.net/"
+          />
+        </MotionGridItem>
+        <MotionGridItem colSpan={{ base: 4, md: 3 }} variants={fadeInUpSlower}>
           <FeaturedCard
             alt="Agora School"
             src="/works/agora.png"
-            height="320px"
+            height={{ base: '220px', md: '225px', '2xl': '260px' }}
             ctaUrl="#"
             objectPosition="right 20%"
+            titlePosition="left-bottom"
           />
-        </GridItem>
-        <GridItem colSpan={3}>
-          <FeaturedCard
-            alt="Agora School"
-            src="/works/prot_kyc01.png"
-            height="320px"
-            ctaUrl="https://tokeneckyc.blotocol.net/"
-            applyBg
-          />
-        </GridItem>
-        <GridItem colSpan={6}>
+        </MotionGridItem>
+        <MotionGridItem colSpan={{ base: 6, md: 3 }} variants={fadeInUpSlower}>
           <FeaturedCard
             alt="TMH Layla EC"
             src="/works/tmh.png"
-            height="280px"
+            height={{ base: '130px', md: '225px', '2xl': '260px' }}
             ctaUrl="https://www.layla-ec.com/"
           />
-          {/* <Box
-            height="280px"
-            backgroundImage="/works/tmh.png"
-            backgroundSize="cover"
-            backgroundRepeat="no-repeat"
-            backgroundPosition="center"
-          ></Box> */}
-        </GridItem>
-      </Grid>
-      {/* <SimpleGrid columns={1} spacing={2}>
-        <Box
-          height="350px"
-          backgroundImage="/works/rsv.png"
-          backgroundSize="cover"
-          backgroundRepeat="no-repeat"
-        >
-          <Image  width="100%" src="/works/rsv.png" objectFit="contain"></Image>
-        </Box>
-      </SimpleGrid> */}
-    </MotionStack>
+        </MotionGridItem>
+      </MotionGrid>
+    </Stack>
   )
 }
 

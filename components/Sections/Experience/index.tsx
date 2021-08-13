@@ -1,17 +1,10 @@
 import { memo } from 'react'
 import { Heading, Text, Stack, useColorModeValue } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
 import ExperienceTab from './ExperienceTab'
-import { fadeInUp } from 'config/animations'
 const DetailSection = () => {
   const miniDesc = useColorModeValue('gray.800', 'gray.400')
-  const MotionStack = motion(Stack)
-
   return (
-    <MotionStack
-      initial={fadeInUp.initial}
-      variants={fadeInUp}
-      animate="animate"
+    <Stack
       width={{ base: '99%', lg: '60%', xl: '73%' }}
       height="100%"
       spacing={6}
@@ -26,7 +19,7 @@ const DetailSection = () => {
       </Text>
 
       <ExperienceTab />
-    </MotionStack>
+    </Stack>
   )
 }
 

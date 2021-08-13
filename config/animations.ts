@@ -22,6 +22,21 @@ const fadeInUp = {
   },
 }
 
+const fadeInUpSlower = {
+  initial: {
+    y: 80,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: DURATIONS.Normal,
+      ease: easing,
+    },
+  },
+}
+
 const letterSpace = {
   initial: {
     opacity: 0,
@@ -73,10 +88,6 @@ const scaleUp = {
 }
 
 const menuAnim = {
-  // initial: {
-  //   opacity: 0,
-  //   y: -100,
-  // },
   show: {
     y: 0,
     opacity: 1,
@@ -120,13 +131,22 @@ const stagger = {
     },
   },
 }
+const galleryStagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+}
 
 export {
   DURATIONS,
   easing,
   fadeInUp,
+  fadeInUpSlower,
   letterSpace,
   stagger,
+  galleryStagger,
   simpleOpacity,
   menuAnim,
   scaleUp,

@@ -24,7 +24,6 @@ import {
 } from 'react-icons/si'
 import { GiCoffeePot, GiDatabase } from 'react-icons/gi'
 import { IoMdOpen } from 'react-icons/io'
-import { motion } from 'framer-motion'
 import { fadeInUp } from 'config/animations'
 
 type ISkillSetModal = {
@@ -37,10 +36,8 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
   const codingYears = currentYear - 2011
   const professionalYears = currentYear - 2016
 
-  const MotionStack = motion(Stack)
-
   return (
-    <MotionStack
+    <Stack
       initial={fadeInUp.initial}
       variants={fadeInUp}
       animate="animate"
@@ -69,10 +66,10 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
             <b>KL</b>
           </Text>
         </Tooltip>{' '}
-        here, My journey in programming started back in 2011 as a teenager, when
-        I got myself into C# and PHP using my old laptop. Eversince then I
-        started freelancing desktop apps, games and websites for lunch pack
-        pennies. I even have a embarrasing anime{' '}
+        here, I started at programming back in 2011, when I got myself into C#
+        and PHP using my old laptop. Eversince then I started freelancing
+        desktop apps, games and websites for lunch pack pennies. I even have a
+        embarrasing anime{' '}
         <Link
           href="https://otakuprogrammer.wordpress.com/"
           target="_blank"
@@ -163,7 +160,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           </Text>
         </Box>
       </SimpleGrid>
-    </MotionStack>
+    </Stack>
   )
 }
 

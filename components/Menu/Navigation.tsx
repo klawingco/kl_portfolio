@@ -18,10 +18,9 @@ import { easing, menuAnim } from 'config/animations'
 import useScrollDirection, { ScrollDirection } from 'hooks/useScrollDirection'
 
 const Navigation = () => {
+  const MotionContainer = motion(Container)
   const { toggleColorMode, colorMode } = useColorMode()
-  const scrollDirection = useScrollDirection()
   const [isOpen, toggleOpen] = useCycle(false, true)
-
   const isMobile = useBreakpointValue({
     base: true,
     md: true,
@@ -39,12 +38,12 @@ const Navigation = () => {
   const IsDark = colorMode === ThemeMode.Dark
   const btnClassName = `${styles.blogBtn} ${!IsDark && styles.dark}`
   const Icon = IsDark ? SunIcon : MoonIcon
-  const MotionContainer = motion(Container)
   const onMenuItemClick = useCallback(() => {
     if (isMobile) {
       toggleOpen()
     }
   }, [isMobile, toggleOpen])
+  const scrollDirection = useScrollDirection()
   return (
     <>
       <Box

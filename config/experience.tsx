@@ -53,11 +53,11 @@ export const Experiences: {
         >
           Westfield
         </Link>{' '}
-        main site and Graphql apis.
+        main site and Graphql apis written in NodeJS.
       </>,
       <>
         Migrating of existing marketing emails related tools and batches into
-        new platform Braze.
+        from Responsys into the new platform called Braze.
       </>,
       <>
         Hired at early 2020, first big task was helping with selection a new
