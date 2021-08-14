@@ -24,7 +24,6 @@ import {
 } from 'react-icons/si'
 import { GiCoffeePot, GiDatabase } from 'react-icons/gi'
 import { IoMdOpen } from 'react-icons/io'
-import { fadeInUp } from 'config/animations'
 
 type ISkillSetModal = {
   onOpen(): void
@@ -37,23 +36,17 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
   const professionalYears = currentYear - 2016
 
   return (
-    <Stack
-      initial={fadeInUp.initial}
-      variants={fadeInUp}
-      animate="animate"
-      width={{ base: '100%', lg: '60%' }}
-      height="100%"
-      spacing={6}
-    >
+    <Stack width={{ base: '100%', lg: '60%' }} height="100%" spacing={6}>
       <Heading
         id="aboutMe"
         as="h4"
-        size="xl"
-        paddingRight="20"
-        textTransform="uppercase"
+        size="2xl"
         letterSpacing={1.8}
+        style={{
+          fontVariantCaps: 'small-caps',
+        }}
       >
-        About Me.
+        About me.
       </Heading>
       <Text color={miniDesc}>
         Hi!{' '}

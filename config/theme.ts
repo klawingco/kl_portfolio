@@ -11,6 +11,13 @@ export const ThemeMode: IThemeMode = {
   Dark: 'dark',
 }
 
+export const mobileBreakpointsMap = {
+  base: true,
+  md: true,
+  lg: true,
+  xl: false,
+}
+
 // Theme Config
 const config = {
   initialColorMode: ThemeMode.Dark,

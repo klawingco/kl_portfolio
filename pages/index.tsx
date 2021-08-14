@@ -6,18 +6,17 @@ import {
   Box,
   useBreakpointValue,
 } from '@chakra-ui/react'
-import Head from 'next/head'
 import dynamic from 'next/dynamic'
-import styles from 'styles/Home.module.css'
+import OpenGraphHead from 'components/Misc/OpenGraphHead'
+import FadeInLayout from 'components/Layout/FadeWhenVisible'
 import Menu from 'components/Menu'
 import Sidebar from 'components/Sidebar'
 import Avatar from 'components/Avatar'
 import About from 'components/Sections/About'
 import Experience from 'components/Sections/Experience'
-import FadeInLayout from 'components/Layout/FadeWhenVisible'
+import ScrollMore from 'components/Misc/ScrollMore'
 // These are on bottom sections so no need to render it instantly
 const FeaturedWorks = dynamic(() => import('components/Sections/FeaturedWorks'))
-
 const Portfolio = (): JSX.Element => {
   const sideBarPadding = useBreakpointValue({ base: '5', md: '8', lg: '14' })
   const mainContent = useBreakpointValue({
@@ -30,25 +29,7 @@ const Portfolio = (): JSX.Element => {
 
   return (
     <>
-      <Head>
-        <title>KL Lawingco | Software Engineer</title>
-        <meta
-          name="description"
-          content="My personal solace place on web-earth."
-        />
-        <meta property="og:title" content="KL Lawingco | Software Engineer" />
-        <meta property="og:site_name" content="Marc Jhon Lawingco" />
-        <meta property="og:url" content="https://kllawingco.netlify.app/" />
-        <meta
-          property="og:description"
-          content="Ohh you found me?. Howdy! I am Marc Jhon Lawingco. Or you could call me KL. That works too . . . I am a Software Engineer"
-        />
-        <meta property="og:type" content="profile" />
-        <meta
-          property="og:image"
-          content="https://kllawingco.netlify.app/KL_avatar.png"
-        ></meta>
-      </Head>
+      <OpenGraphHead />
       <Menu />
       <Grid
         id="mainGrid"
@@ -80,7 +61,6 @@ const Portfolio = (): JSX.Element => {
           padding={mainContent}
           rowSpan={2}
           colSpan={{ base: 1, sm: 2, md: 2, lg: 3, xl: 3 }}
-          className={styles.mainContent}
           overflow="hidden"
         >
           <Stack w="100" spacing={24}>
@@ -97,7 +77,7 @@ const Portfolio = (): JSX.Element => {
                   xl: 'center',
                 }}
                 paddingTop={{ base: 0, lg: 20, xl: 0 }}
-                paddingX={0}
+                paddingBottom={{ base: 10, lg: 0 }}
                 flexDirection={{
                   base: 'column-reverse',
                   lg: 'row',
@@ -111,6 +91,7 @@ const Portfolio = (): JSX.Element => {
               <Box
                 className="contentRow"
                 paddingTop={{ base: 0, lg: 20, xl: 0 }}
+                paddingBottom={{ base: 10, lg: 0 }}
                 paddingX={0}
                 flexDirection={'row'}
               >
@@ -121,7 +102,7 @@ const Portfolio = (): JSX.Element => {
               <Box
                 className="contentRow"
                 paddingTop={{ base: 0, lg: 20, xl: 20 }}
-                paddingBottom={{ base: 0, lg: 20, xl: 24 }}
+                paddingBottom={{ base: 10, lg: 20, xl: 24 }}
                 paddingX={0}
                 flexDirection={'row'}
               >
@@ -131,6 +112,7 @@ const Portfolio = (): JSX.Element => {
           </Stack>
         </GridItem>
       </Grid>
+      <ScrollMore />
     </>
   )
 }

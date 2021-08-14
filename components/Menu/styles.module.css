@@ -1,23 +1,19 @@
 
-.menu, .menuBar{
+
+.menu{
   position: fixed;
   top:0;
   right: 3.5%;
   z-index: 1;
 }
-.menuCont{
+.mobileMenuContainer{
   position: sticky;
   z-index: 1;
   top: 0;
-  padding-top: 1em !important;
-  padding-bottom: 1em !important;
-  height: 60px;
+  height: 68px;
   display: flex;
   justify-content: space-between;
   justify-items: flex-end;
-}
-.menuCont .menuBar, .menuCont .logo{
-  top: 1em;
 }
 
 .blogBtn{
