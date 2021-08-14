@@ -40,15 +40,6 @@ body::-webkit-scrollbar-thumb{
 
 /* Fallback */
 @media (max-width: 1279px) { 
-  body{
-    overflow-y: scroll;
-  }
-  aside{
-    max-width: 50%;
-  }
-  main{
-    overflow-y: unset  !important;
-  }
   #mainGrid{
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 0);

@@ -18,8 +18,9 @@ import { easing, menuAnim } from 'config/animations'
 import useScrollDirection, { ScrollDirection } from 'hooks/useScrollDirection'
 
 const Navigation = () => {
-  const MotionContainer = motion(Container)
   const { toggleColorMode, colorMode } = useColorMode()
+  const MotionContainer = motion(Container)
+
   const [isOpen, toggleOpen] = useCycle(false, true)
   const isMobile = useBreakpointValue({
     base: true,
@@ -47,12 +48,21 @@ const Navigation = () => {
   return (
     <>
       <Box
-        display={{ base: 'block', xl: 'none' }}
+        display={{ base: 'flex', xl: 'none' }}
+        alignItems="center"
         paddingTop={1}
         className={styles.menuBar}
         zIndex={100}
         top="3%"
       >
+        <IconButton
+          aria-label="Color Mode"
+          variant="ghost"
+          icon={<Icon />}
+          boxShadow="none"
+          onClick={toggleColorMode}
+          padding={0}
+        />
         <MobileMenu isDarkMode={IsDark} toggle={toggleOpen} isOpen={isOpen} />
       </Box>
 
@@ -96,7 +106,7 @@ const Navigation = () => {
             <Button
               fontWeight="light"
               variant="ghost"
-              textTransform="uppercase"
+              textTransform={{ base: 'none', lg: 'uppercase' }}
               fontSize={menuButtonSize}
               letterSpacing={2}
               className={btnClassName}
@@ -112,7 +122,7 @@ const Navigation = () => {
             <Button
               fontWeight="light"
               variant="ghost"
-              textTransform="uppercase"
+              textTransform={{ base: 'none', lg: 'uppercase' }}
               fontSize={menuButtonSize}
               letterSpacing={2}
               className={btnClassName}
@@ -128,7 +138,7 @@ const Navigation = () => {
             <Button
               fontWeight="light"
               variant="ghost"
-              textTransform="uppercase"
+              textTransform={{ base: 'none', lg: 'uppercase' }}
               fontSize={menuButtonSize}
               letterSpacing={2}
               className={btnClassName}
@@ -144,7 +154,7 @@ const Navigation = () => {
             <Button
               fontWeight="light"
               variant="ghost"
-              textTransform="uppercase"
+              textTransform={{ base: 'none', lg: 'uppercase' }}
               fontSize={menuButtonSize}
               letterSpacing={2}
               className={btnClassName}
@@ -153,18 +163,17 @@ const Navigation = () => {
               Contact
             </Button>
           </Box>
-          <Box>
-            <IconButton
-              aria-label="Color Mode"
-              variant="ghost"
-              icon={<Icon />}
-              boxShadow="none"
-              onClick={() => {
-                toggleColorMode()
-                onMenuItemClick()
-              }}
-            />
-          </Box>
+          {!isMobile && (
+            <Box>
+              <IconButton
+                aria-label="Color Mode"
+                variant="ghost"
+                icon={<Icon />}
+                boxShadow="none"
+                onClick={toggleColorMode}
+              />
+            </Box>
+          )}
         </Flex>
       </MotionContainer>
     </>

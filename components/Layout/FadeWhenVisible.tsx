@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { motion, useAnimation } from 'framer-motion'
-import { fadeInUp } from 'config/animations'
+import { fadeInUpSlower } from 'config/animations'
 const FadeInWhenVisible = ({ children }: { children: React.ReactNode }) => {
   const controls = useAnimation()
   const [ref, inView] = useInView({
@@ -20,7 +20,7 @@ const FadeInWhenVisible = ({ children }: { children: React.ReactNode }) => {
       ref={ref}
       animate={controls}
       initial="initial"
-      variants={fadeInUp}
+      variants={fadeInUpSlower}
     >
       {children}
     </motion.div>

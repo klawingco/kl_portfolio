@@ -9,8 +9,14 @@ const DetailSection = () => {
       height="100%"
       spacing={6}
     >
-      <Heading id="jobs" size="xl" textTransform="uppercase">
-        Places I’ve worked.
+      <Heading
+        id="jobs"
+        size="2xl"
+        style={{
+          fontVariantCaps: 'small-caps',
+        }}
+      >
+        Places i’ve worked.
       </Heading>
       <Text color={miniDesc}>
         Since 2016, I’ve had privilege to work with several companies that

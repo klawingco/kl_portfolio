@@ -20,8 +20,17 @@ export const MenuToggle = ({
   toggle(): void
   isDarkMode?: boolean
 }) => (
-  <button onClick={toggle}>
-    <svg width="23" height="23" viewBox="0 0 23 23">
+  <button
+    onClick={toggle}
+    style={{
+      width: '40px',
+      height: '40px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
+  >
+    <svg width="23" height="23" viewBox="0 0 23 18">
       <Path
         isDarkMode={isDarkMode}
         variants={{
@@ -58,7 +67,14 @@ const MobileMenu = ({
   isDarkMode: boolean
   toggle(): void
 }) => (
-  <motion.nav initial={false} animate={isOpen ? 'open' : 'closed'}>
+  <motion.nav
+    initial={false}
+    animate={isOpen ? 'open' : 'closed'}
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+    }}
+  >
     {/* <motion.div className="background" variants={sidebar} /> */}
     <MenuToggle toggle={() => toggle()} isDarkMode={isDarkMode} />
   </motion.nav>

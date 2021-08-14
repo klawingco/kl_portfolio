@@ -8,12 +8,15 @@ export enum ScrollDirection {
 
 const AVATAR_PADD_OFFSET = 100
 
-const useScrollDirection = (isMobileOnly = false, isMobile = false) => {
+const useScrollDirection = (
+  isMobileOnly = false,
+  isMobile = false,
+  belowAvatar = true
+) => {
   const [scrollDir, setScrollDir] = useState(ScrollDirection.Initial)
   const [isInitialized, setIsInitialized] = useState(false)
 
   useEffect(() => {
-    window.scrollY
     const avatarContainer = document.querySelector('#klAvatar') as HTMLElement
     const avatarScrollY =
       avatarContainer?.offsetTop +
@@ -25,11 +28,13 @@ const useScrollDirection = (isMobileOnly = false, isMobile = false) => {
     let ticking = false
     const updateScrollDir = () => {
       const scrollY = window.scrollY || 0
+
       if (Math.abs(scrollY - lastScrollY) < threshold) {
         ticking = false
         return
       }
-      const isBelowAvatar = !isMobileOnly ? scrollY > avatarScrollY : true
+      const isBelowAvatar =
+        !isMobileOnly && belowAvatar ? scrollY > avatarScrollY : true
       let currentScrollDirection = ScrollDirection.Initial
 
       // Used to tell if menu will show or not
@@ -70,7 +75,7 @@ const useScrollDirection = (isMobileOnly = false, isMobile = false) => {
     return () => {
       window?.removeEventListener('scroll', onScroll)
     }
-  }, [scrollDir, isMobileOnly, isMobile, isInitialized])
+  }, [scrollDir, isMobileOnly, isMobile, isInitialized, belowAvatar])
   return scrollDir
 }
 

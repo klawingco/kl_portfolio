@@ -22,8 +22,14 @@ const FeaturedWorksSection = () => {
       height="100%"
       spacing={6}
     >
-      <Heading id="works" size="xl" textTransform="uppercase">
-        few of my works.
+      <Heading
+        id="works"
+        size="2xl"
+        style={{
+          fontVariantCaps: 'small-caps',
+        }}
+      >
+        Some of my works.
       </Heading>
       <Text color={miniDesc}>
         Checkout few of my works I did. Freelance, things I made at company and
