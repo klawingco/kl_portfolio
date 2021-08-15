@@ -188,6 +188,9 @@ const Navigation = () => {
               className={btnClassName}
               padding={2}
               marginX={2}
+              as="a"
+              href="#contact"
+              rel="noreferrer"
               onClick={onMenuItemClick}
             >
               Contact

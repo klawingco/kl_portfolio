@@ -44,19 +44,14 @@ const emailVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 250,
-    x: 50,
-    rotate: 90,
   },
   show: {
     opacity: 1,
     y: 0,
-    x: 50,
-    rotate: 90,
   },
   exit: {
     opacity: [1, 0],
     y: [0, 250],
-    rotate: 90,
     transition: {
       duration: 0.5,
       ease: 'easeOut',
@@ -104,13 +99,17 @@ const ScrollMore = () => {
             exit="exit"
             variants={emailVariants}
             whileHover={{ y: -50 }}
-            // style={{
-            //   transform: 'rotate(90deg)'
-            // }}
+            style={{
+              writingMode: 'vertical-rl',
+              position: 'fixed',
+              right: '8%',
+              bottom: '-8%',
+            }}
           >
             <Text
               as="a"
               paddingY={3}
+              fontFamily="monospace"
               href="mailto:marcjhon18@gmail.com"
               target="_blank"
               rel="noreferrer"
@@ -122,26 +121,23 @@ const ScrollMore = () => {
                   opacity: 1,
                 },
               }}
-              fontWeight="light"
-              fontSize="smaller"
               position="relative"
-              letterSpacing={2}
+              letterSpacing={3}
               display="flex"
               alignItems="center"
               justifyContent="center"
-              // transform="rotate(90deg)"
-              marginBottom="5em"
               _after={{
                 backgroundColor: emailLine,
-                height: '2px',
+                width: '2px',
                 opacity: 0.5,
                 content: '""',
                 flex: 1,
-                width: { base: '5em', xl: '8em' },
-                marginLeft: '1em',
+                height: { base: '5em', xl: '8em' },
+                margin: 'auto',
+                marginTop: '10px',
               }}
             >
-              marcjhon@gmail.com
+              marcjhon@gmail.com{' '}
             </Text>
           </motion.div>
         )}
