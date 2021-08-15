@@ -139,7 +139,7 @@ const Sidebar = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Hit me up!
+            Get in touch!
           </MotionButton>
 
           <MotionBox d="flex" variants={simpleOpacity} color={miniDesc}>

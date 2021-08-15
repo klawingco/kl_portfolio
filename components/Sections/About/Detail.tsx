@@ -38,7 +38,6 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
   return (
     <Stack width={{ base: '100%', lg: '60%' }} height="100%" spacing={6}>
       <Heading
-        id="aboutMe"
         as="h4"
         size="2xl"
         letterSpacing={1.8}
@@ -59,10 +58,9 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
             <b>KL</b>
           </Text>
         </Tooltip>{' '}
-        here, I started at programming back in 2011, when I got myself into C#
-        and PHP using my old laptop. Eversince then I started freelancing
-        desktop apps, games and websites for lunch pack pennies. I even have a
-        embarrasing anime{' '}
+        here, I started at programming when I got myself into C# and PHP back in
+        2011. Eversince then I started freelancing desktop apps, games and
+        websites for lunch pack pennies. I even have a embarrasing anime{' '}
         <Link
           href="https://otakuprogrammer.wordpress.com/"
           target="_blank"
@@ -75,9 +73,9 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
         back then.
       </Text>
       <Text color={miniDesc}>
-        Almost {codingYears} years later and {professionalYears} years of it as
+        Almost {codingYears} years later and {professionalYears} of it as
         professional work, right now I am working as a <b>Software Engineer</b>{' '}
-        focuses on <b>architecture</b>, <b>backend APIs</b>,{' '}
+        that focuses on <b>architecture</b>, <b>APIs</b>,{' '}
         <Tooltip
           label="Ha!. Or more accurately TECH DEBT"
           aria-label="Tech Debt?"

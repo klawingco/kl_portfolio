@@ -26,6 +26,7 @@ const Logo = () => {
             initial="initial"
             animate={isLogoLoaded && 'animate'}
             onLoad={() => setLogoLoaded(true)}
+            zIndex={2}
           />
         ) : (
           <MotionImage
@@ -39,6 +40,7 @@ const Logo = () => {
             initial="initial"
             animate={isLogoLoaded && 'animate'}
             onLoad={() => setLogoLoaded(true)}
+            zIndex={2}
           />
         )}
       </Link>

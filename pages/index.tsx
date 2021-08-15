@@ -66,6 +66,7 @@ const Portfolio = (): JSX.Element => {
           <Stack w="100" spacing={24}>
             <FadeInLayout>
               <Box
+                id="aboutMe"
                 className="contentRow"
                 minH={{ lg: '100vh' }}
                 display="flex"
@@ -89,6 +90,7 @@ const Portfolio = (): JSX.Element => {
             </FadeInLayout>
             <FadeInLayout>
               <Box
+                id="jobs"
                 className="contentRow"
                 paddingTop={{ base: 0, lg: 20, xl: 0 }}
                 paddingBottom={{ base: 10, lg: 0 }}
@@ -100,6 +102,7 @@ const Portfolio = (): JSX.Element => {
             </FadeInLayout>
             <FadeInLayout>
               <Box
+                id="works"
                 className="contentRow"
                 paddingTop={{ base: 0, lg: 20, xl: 20 }}
                 paddingBottom={{ base: 10, lg: 20, xl: 24 }}

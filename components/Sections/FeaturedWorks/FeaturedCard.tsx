@@ -101,7 +101,7 @@ const FeaturedCard = ({
         <Text
           paddingY={1}
           paddingX={4}
-          fontSize={{ base: 'md', lg: 'md', xl: 'lg', '2xl': 'larger' }}
+          fontSize={{ base: 'md', lg: 'md', xl: 'md', '2xl': 'larger' }}
           color="gray.100"
           letterSpacing={2}
           textTransform="uppercase"

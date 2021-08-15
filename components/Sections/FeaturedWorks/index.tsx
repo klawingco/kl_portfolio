@@ -23,7 +23,6 @@ const FeaturedWorksSection = () => {
       spacing={6}
     >
       <Heading
-        id="works"
         size="2xl"
         style={{
           fontVariantCaps: 'small-caps',
@@ -32,8 +31,8 @@ const FeaturedWorksSection = () => {
         Some of my works.
       </Heading>
       <Text color={miniDesc}>
-        Checkout few of my works I did. Freelance, things I made at company and
-        case studies.
+        Checkout some of my works I did at freelancing, projects at the company
+        and even case studies.
       </Text>
 
       <MotionGrid
