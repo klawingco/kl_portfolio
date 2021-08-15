@@ -17,6 +17,8 @@ import Experience from 'components/Sections/Experience'
 import ScrollMore from 'components/Misc/ScrollMore'
 // These are on bottom sections so no need to render it instantly
 const FeaturedWorks = dynamic(() => import('components/Sections/FeaturedWorks'))
+const GetInTouch = dynamic(() => import('components/Sections/GetInTouch'))
+
 const Portfolio = (): JSX.Element => {
   const sideBarPadding = useBreakpointValue({ base: '5', md: '8', lg: '14' })
   const mainContent = useBreakpointValue({
@@ -105,11 +107,23 @@ const Portfolio = (): JSX.Element => {
                 id="works"
                 className="contentRow"
                 paddingTop={{ base: 0, lg: 20, xl: 20 }}
-                paddingBottom={{ base: 10, lg: 20, xl: 24 }}
+                paddingBottom={{ base: 10, lg: 0 }}
                 paddingX={0}
                 flexDirection={'row'}
               >
                 <FeaturedWorks />
+              </Box>
+            </FadeInLayout>
+            <FadeInLayout>
+              <Box
+                id="contact"
+                className="contentRow"
+                paddingTop={{ base: 0, lg: 20, xl: 20 }}
+                paddingBottom={{ base: 10, lg: 20, xl: 24 }}
+                paddingX={0}
+                flexDirection={'row'}
+              >
+                <GetInTouch />
               </Box>
             </FadeInLayout>
           </Stack>
