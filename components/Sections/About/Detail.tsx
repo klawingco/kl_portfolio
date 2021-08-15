@@ -38,7 +38,6 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
   return (
     <Stack width={{ base: '100%', lg: '60%' }} height="100%" spacing={6}>
       <Heading
-        id="aboutMe"
         as="h4"
         size="2xl"
         letterSpacing={1.8}

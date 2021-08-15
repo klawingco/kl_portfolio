@@ -53,8 +53,8 @@ const Menu = () => {
         display="flex"
         alignItems="center"
         justifyContent="space-between"
-        padding={{ base: 5, md: 0 }}
-        paddingY={{ base: 5, md: 0 }}
+        padding={{ base: 5, lg: 0 }}
+        paddingY={{ base: 5, lg: 0 }}
         backgroundColor={isMobile ? bg : 'transparent'}
         width="100vw"
         maxWidth="100vw"

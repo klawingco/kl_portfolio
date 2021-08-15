@@ -23,7 +23,6 @@ const FeaturedWorksSection = () => {
       spacing={6}
     >
       <Heading
-        id="works"
         size="2xl"
         style={{
           fontVariantCaps: 'small-caps',

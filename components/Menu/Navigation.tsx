@@ -20,6 +20,7 @@ import useScrollDirection, { ScrollDirection } from 'hooks/useScrollDirection'
 const Navigation = () => {
   const { toggleColorMode, colorMode } = useColorMode()
   const MotionContainer = motion(Container)
+  const MotionButton = motion(Button)
 
   const [isOpen, toggleOpen] = useCycle(false, true)
   const isMobile = useBreakpointValue({
@@ -28,22 +29,27 @@ const Navigation = () => {
     lg: true,
     xl: false,
   })
-
   const menuButtonSize = useBreakpointValue({
     base: 'xl',
-    md: 'md',
+    md: 'sm',
   })
 
   const bg = useColorModeValue('gray.100', 'black')
-  const borderColor = useColorModeValue('black.400', 'cyan.200')
+  const borderColor = useColorModeValue('teal.500', 'cyan.200')
+  const resumeColor = useColorModeValue('teal.500', 'cyan.200')
+
   const IsDark = colorMode === ThemeMode.Dark
   const btnClassName = `${styles.blogBtn} ${!IsDark && styles.dark}`
   const Icon = IsDark ? SunIcon : MoonIcon
-  const onMenuItemClick = useCallback(() => {
-    if (isMobile) {
-      toggleOpen()
-    }
-  }, [isMobile, toggleOpen])
+  const onMenuItemClick = useCallback(
+    (e) => {
+      e.stopPropagation()
+      if (isMobile) {
+        toggleOpen()
+      }
+    },
+    [isMobile, toggleOpen]
+  )
   const scrollDirection = useScrollDirection()
   return (
     <>
@@ -78,7 +84,7 @@ const Navigation = () => {
             !isMobile && scrollDirection === ScrollDirection.Down
               ? '12%'
               : '100%',
-          top: !isOpen && isMobile && -200,
+          top: !isOpen && isMobile && '-100vh',
           opacity: !isOpen && isMobile && '0',
           left: isOpen && isMobile && 0,
         }}
@@ -92,24 +98,33 @@ const Navigation = () => {
         as="nav"
       >
         <Flex
-          justifyContent="flex-end"
+          justifyContent={{ base: 'center', lg: 'flex-end' }}
           direction={{
             base: 'column',
             lg: scrollDirection === ScrollDirection.Down ? 'column' : 'row',
           }}
           paddingX={{ base: '', sm: '10', lg: '0' }}
-          paddingY={{ base: '10', lg: '3' }}
+          paddingY={{
+            base: '10',
+            lg: scrollDirection === ScrollDirection.Down ? '10' : '3',
+          }}
+          height={{ base: '100vh', lg: 'auto' }}
           paddingRight="0"
-          paddingBottom="0"
+          paddingBottom={isMobile ? 10 : '0'}
+          onClick={() => isMobile && toggleOpen()}
         >
-          <Box>
+          <Box
+            width={{ base: '100%', lg: 'auto' }}
+            textAlign={{ base: 'center', lg: 'left' }}
+          >
             <Button
               fontWeight="light"
               variant="ghost"
-              textTransform={{ base: 'none', lg: 'uppercase' }}
               fontSize={menuButtonSize}
               letterSpacing={2}
               className={btnClassName}
+              padding={2}
+              marginX={2}
               as="a"
               href="#aboutMe"
               rel="noreferrer"
@@ -118,14 +133,19 @@ const Navigation = () => {
               About
             </Button>
           </Box>
-          <Box>
+          <Box
+            width={{ base: '100%', lg: 'auto' }}
+            textAlign={{ base: 'center', lg: 'left' }}
+            marginY={{ base: 2, lg: 0 }}
+          >
             <Button
               fontWeight="light"
               variant="ghost"
-              textTransform={{ base: 'none', lg: 'uppercase' }}
               fontSize={menuButtonSize}
               letterSpacing={2}
               className={btnClassName}
+              padding={2}
+              marginX={2}
               as="a"
               href="#jobs"
               rel="noreferrer"
@@ -134,14 +154,19 @@ const Navigation = () => {
               Experience
             </Button>
           </Box>
-          <Box>
+          <Box
+            width={{ base: '100%', lg: 'auto' }}
+            textAlign={{ base: 'center', lg: 'left' }}
+            marginY={{ base: 2, lg: 0 }}
+          >
             <Button
               fontWeight="light"
               variant="ghost"
-              textTransform={{ base: 'none', lg: 'uppercase' }}
               fontSize={menuButtonSize}
               letterSpacing={2}
               className={btnClassName}
+              padding={2}
+              marginX={2}
               as="a"
               href="#works"
               rel="noreferrer"
@@ -150,18 +175,50 @@ const Navigation = () => {
               Works
             </Button>
           </Box>
-          <Box>
+          <Box
+            width={{ base: '100%', lg: 'auto' }}
+            textAlign={{ base: 'center', lg: 'left' }}
+            marginY={{ base: 2, lg: 0 }}
+          >
             <Button
               fontWeight="light"
               variant="ghost"
-              textTransform={{ base: 'none', lg: 'uppercase' }}
               fontSize={menuButtonSize}
               letterSpacing={2}
               className={btnClassName}
+              padding={2}
+              marginX={2}
               onClick={onMenuItemClick}
             >
               Contact
             </Button>
+          </Box>
+          <Box
+            width={{ base: '100%', lg: 'auto' }}
+            textAlign={{ base: 'center', lg: 'left' }}
+            marginY={{ base: 2, lg: 0 }}
+          >
+            <MotionButton
+              fontWeight="light"
+              variant="solid"
+              fontSize="sm"
+              borderColor={resumeColor}
+              borderRadius="0"
+              borderWidth="1px"
+              color={resumeColor}
+              letterSpacing={2}
+              padding={2}
+              marginX={2}
+              as="a"
+              rel="noreferrer"
+              target="_blank"
+              href="LawingcoMarcJhon2021v2.pdf"
+              onClick={onMenuItemClick}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              resume
+            </MotionButton>
           </Box>
           {!isMobile && (
             <Box>
