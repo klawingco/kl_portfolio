@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Heading, Text, Stack, useColorModeValue } from '@chakra-ui/react'
+import { Heading, Text, Stack, Link, useColorModeValue } from '@chakra-ui/react'
 import ExperienceTab from './ExperienceTab'
 const DetailSection = () => {
   const miniDesc = useColorModeValue('gray.800', 'gray.400')
@@ -18,9 +18,17 @@ const DetailSection = () => {
         Places i’ve worked.
       </Heading>
       <Text color={miniDesc}>
-        Since 2016, I’ve had privilege to work with several companies that
+        Since 2016, I’ve had a privilege to work with several companies that
         enables me to hone my skills and talents. These companies will always
-        have a special place in my heart.
+        have a special place in my heart. Currently I am working with{' '}
+        <Link
+          href="https://www.scentregroup.com/home-page"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Scentre Group
+        </Link>{' '}
+        from Australia and New Zealand.
       </Text>
 
       <ExperienceTab />

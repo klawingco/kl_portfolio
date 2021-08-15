@@ -44,14 +44,19 @@ const emailVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 250,
+    x: 50,
+    rotate: 90,
   },
   show: {
     opacity: 1,
     y: 0,
+    x: 50,
+    rotate: 90,
   },
   exit: {
     opacity: [1, 0],
     y: [0, 250],
+    rotate: 90,
     transition: {
       duration: 0.5,
       ease: 'easeOut',
@@ -99,6 +104,9 @@ const ScrollMore = () => {
             exit="exit"
             variants={emailVariants}
             whileHover={{ y: -50 }}
+            // style={{
+            //   transform: 'rotate(90deg)'
+            // }}
           >
             <Text
               as="a"
@@ -110,7 +118,7 @@ const ScrollMore = () => {
               _hover={{
                 color: emailLine,
                 _after: {
-                  backgroundColor: 'cyan.200',
+                  backgroundColor: emailLine,
                   opacity: 1,
                 },
               }}
@@ -121,7 +129,7 @@ const ScrollMore = () => {
               display="flex"
               alignItems="center"
               justifyContent="center"
-              transform="rotate(90deg)"
+              // transform="rotate(90deg)"
               marginBottom="5em"
               _after={{
                 backgroundColor: emailLine,
