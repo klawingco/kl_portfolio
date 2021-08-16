@@ -95,10 +95,10 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           hasArrow
         >
           <Text as="span" color={emphasis} textDecorationLine="line-through">
-            tea...
+            tea
           </Text>
         </Tooltip>{' '}
-        err.. no. coffee <Icon as={GiCoffeePot} color={emphasis} />.
+        coffee <Icon as={GiCoffeePot} color={emphasis} />.
       </Text>
 
       <SimpleGrid columns={2} spacing={4}>

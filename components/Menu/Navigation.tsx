@@ -34,7 +34,11 @@ const Navigation = () => {
     md: 'sm',
   })
 
-  const bg = useColorModeValue('gray.100', 'black')
+  const bg = useColorModeValue(
+    'rgba(237, 242, 247, 0.95)',
+    'rgba(18, 18, 18, 0.95)'
+  )
+
   const borderColor = useColorModeValue('teal.500', 'cyan.200')
   const resumeColor = useColorModeValue('teal.500', 'cyan.200')
 

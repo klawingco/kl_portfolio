@@ -27,8 +27,8 @@ const DetailSection = () => {
           rel="noreferrer"
         >
           Scentre Group
-        </Link>{' '}
-        from Australia and New Zealand.
+        </Link>
+        .
       </Text>
 
       <ExperienceTab />
