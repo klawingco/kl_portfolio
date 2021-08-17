@@ -41,7 +41,8 @@ export const Experiences: {
         >
           Westfield Marketing Hub
         </Link>{' '}
-        into NextJS and Typescript.
+        into NextJS and Typescript. Restructure the old express api app into a
+        newer approach.
       </>,
       <>
         Worked on maintaining{' '}
@@ -88,8 +89,8 @@ export const Experiences: {
     },
     roles: [
       <>
-        Developed a Twitter Raffle Campaign / Contest Bot. With statistics
-        similar to Facebook Ads.
+        Developed a Twitter Raffle Campaign / Contest Bot called Camps with
+        statistics similar to Facebook Ads.
       </>,
       <>
         In 2019 got promoted as Senior Software Engineer and worked with Cryto

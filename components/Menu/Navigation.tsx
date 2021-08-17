@@ -13,7 +13,7 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { motion, useCycle } from 'framer-motion'
 import styles from './styles.module.css'
 import MobileMenu from './toggle'
-import { ThemeMode } from 'config/theme'
+import { ThemeMode, mobileBreakpointsMap } from 'config/theme'
 import { easing, menuAnim } from 'config/animations'
 import useScrollDirection, { ScrollDirection } from 'hooks/useScrollDirection'
 
@@ -21,14 +21,8 @@ const Navigation = () => {
   const { toggleColorMode, colorMode } = useColorMode()
   const MotionContainer = motion(Container)
   const MotionButton = motion(Button)
-
   const [isOpen, toggleOpen] = useCycle(false, true)
-  const isMobile = useBreakpointValue({
-    base: true,
-    md: true,
-    lg: true,
-    xl: false,
-  })
+  const isMobile = useBreakpointValue(mobileBreakpointsMap)
   const menuButtonSize = useBreakpointValue({
     base: 'xl',
     md: 'sm',
@@ -36,7 +30,7 @@ const Navigation = () => {
 
   const bg = useColorModeValue(
     'rgba(237, 242, 247, 0.95)',
-    'rgba(18, 18, 18, 0.95)'
+    'rgba(18, 18, 18, 0.9)'
   )
 
   const borderColor = useColorModeValue('teal.500', 'cyan.200')
@@ -130,7 +124,7 @@ const Navigation = () => {
               padding={2}
               marginX={2}
               as="a"
-              href="#aboutMe"
+              href={isMobile ? '#aboutMe' : '#'}
               rel="noreferrer"
               onClick={onMenuItemClick}
             >

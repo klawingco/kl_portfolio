@@ -3,10 +3,11 @@ import {
   Image as ChkImage,
   Text,
   Link,
+  SkeletonCircle,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { avatarAnimation } from 'config/animations'
 
 const AvatarImages = {
@@ -21,7 +22,6 @@ declare global {
 }
 
 const Avatar = () => {
-  const [isLoaded, setLoaded] = useState(false)
   const MotionBox = motion(Box)
   const emphasis = useColorModeValue('teal.500', 'cyan.200')
   const subTextcolor = useColorModeValue('gray.800', 'gray.400')
@@ -48,7 +48,7 @@ const Avatar = () => {
         padding={{ base: 8 }}
         marginBottom={{ base: 10, md: 0, lg: 0 }}
         initial="initial"
-        animate={isLoaded && 'animate'}
+        animate={'animate'}
         variants={avatarAnimation}
         exit={{ opacity: 0 }}
       >
@@ -58,7 +58,7 @@ const Avatar = () => {
           htmlWidth="250"
           htmlHeight="250"
           margin="auto"
-          onLoad={() => setLoaded(true)}
+          fallback={<SkeletonCircle height="100%" width="100%" />}
         />
         <Text textAlign="center" fontSize="smaller" color={subTextcolor}>
           Art by{' '}
