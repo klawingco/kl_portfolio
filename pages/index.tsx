@@ -119,7 +119,6 @@ const Portfolio = (): JSX.Element => {
                 id="contact"
                 className="contentRow"
                 paddingTop={{ base: 0, lg: 20, xl: 20 }}
-                paddingBottom={{ base: 10, lg: 20, xl: 24 }}
                 paddingX={0}
                 flexDirection={'row'}
               >
