@@ -5,6 +5,7 @@ import {
   Stack,
   Link,
   Icon,
+  Box,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { motion, Variants } from 'framer-motion'
@@ -75,7 +76,7 @@ const GetInTouch = () => {
         .
       </Text>
 
-      <Stack
+      <Box
         spacing={0.5}
         textAlign="center"
         color={miniDesc}
@@ -94,17 +95,13 @@ const GetInTouch = () => {
           target="_blank"
           _focus={{ boxShadow: 'none' }}
         >
-          <Text>
-            <Icon as={RiGithubFill} h={6} w={6} />
-          </Text>
-          <Text>
-            Designed and Made with <Icon as={RiHeartPulseFill} />
-          </Text>
-          <Text>
+          <Text as="span">
+            <Icon as={RiGithubFill} h={6} w={6} /> <br />
+            Designed and Made with <Icon as={RiHeartPulseFill} /> <br />
             KL Lawingco <Icon as={RiCopyleftLine} /> 2021
           </Text>
         </Link>
-      </Stack>
+      </Box>
     </Stack>
   )
 }
