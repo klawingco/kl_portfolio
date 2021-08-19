@@ -20,9 +20,10 @@ import {
   SiGraphql,
   SiReact,
   SiNextDotJs,
+  SiNodeDotJs,
   SiDocker,
 } from 'react-icons/si'
-import { GiCoffeePot, GiDatabase } from 'react-icons/gi'
+import { GiCoffeePot } from 'react-icons/gi'
 import { IoMdOpen } from 'react-icons/io'
 
 type ISkillSetModal = {
@@ -117,8 +118,8 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           </ListItem>
 
           <ListItem fontSize="small" display="flex" alignItems="center">
-            <ListIcon as={GiDatabase} color={emphasis} fontSize="2em" />
-            RDBMS - NoSQL
+            <ListIcon as={SiNodeDotJs} color={emphasis} fontSize="2em" />
+            Node
           </ListItem>
         </List>
         <List spacing={3}>

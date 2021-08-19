@@ -15,11 +15,13 @@ import Avatar from 'components/Avatar'
 import About from 'components/Sections/About'
 import Experience from 'components/Sections/Experience'
 import ScrollMore from 'components/Misc/ScrollMore'
+import { Article } from 'types/article'
 // These are on bottom sections so no need to render it instantly
 const FeaturedWorks = dynamic(() => import('components/Sections/FeaturedWorks'))
+const DevToArticles = dynamic(() => import('components/Sections/DevToArticles'))
 const GetInTouch = dynamic(() => import('components/Sections/GetInTouch'))
 
-const Portfolio = (): JSX.Element => {
+const Portfolio = ({ articles }: { articles: Article[] }): JSX.Element => {
   const sideBarPadding = useBreakpointValue({ base: '5', md: '8', lg: '14' })
   const mainContent = useBreakpointValue({
     base: '5',
@@ -116,6 +118,18 @@ const Portfolio = (): JSX.Element => {
             </FadeInLayout>
             <FadeInLayout>
               <Box
+                id="blog"
+                className="contentRow"
+                paddingTop={{ base: 0, lg: 20, xl: 20 }}
+                paddingBottom={{ base: 10, lg: 0 }}
+                paddingX={0}
+                flexDirection={'row'}
+              >
+                <DevToArticles articles={articles} />
+              </Box>
+            </FadeInLayout>
+            <FadeInLayout>
+              <Box
                 id="contact"
                 className="contentRow"
                 paddingTop={{ base: 0, lg: 20, xl: 20 }}
@@ -131,6 +145,16 @@ const Portfolio = (): JSX.Element => {
       <ScrollMore />
     </>
   )
+}
+
+export async function getStaticProps() {
+  const res = await fetch('https://dev.to/api/articles?username=klawingco')
+  const articles = await res.json()
+  return {
+    props: {
+      articles,
+    },
+  }
 }
 
 export default Portfolio
