@@ -41,8 +41,12 @@ export const Experiences: {
         >
           Westfield Marketing Hub
         </Link>{' '}
-        into NextJS and Typescript. Restructure the old express api app into a
-        newer approach.
+        into NextJS and Typescript. Restructuring the old express backend app
+        into a newer approach.
+      </>,
+      <>
+        Created multiple Contentful and Bynder extensions to improve BX process
+        better.
       </>,
       <>
         Worked on maintaining{' '}

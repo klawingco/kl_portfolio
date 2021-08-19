@@ -75,6 +75,12 @@ const Navigation = () => {
         backgroundColor={bg}
         maxWidth={{ base: '100%', sm: '35%', lg: '50%', xl: '60%' }}
         className={styles.menu}
+        right={{
+          lg:
+            !isMobile && scrollDirection === ScrollDirection.Down
+              ? '2%'
+              : '3.5%',
+        }}
         initial="hide"
         animate={(!isMobile || isOpen) && 'show'}
         style={{
