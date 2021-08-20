@@ -45,7 +45,7 @@ const ExperienceTab = () => {
   })
 
   return (
-    <Tabs id="experienceTabs" orientation={tabOrientation} isLazy minH="370px">
+    <Tabs id="experienceTabs" orientation={tabOrientation} isLazy>
       <TabList width={'30%'} borderColor="transparent">
         {ExperiencesList.map((company) => (
           <Tab
@@ -61,6 +61,7 @@ const ExperienceTab = () => {
               boxShadow: 'none',
               borderLeftWidth: tabOrientation === 'vertical' ? '4px' : '0',
               borderBottomWidth: tabOrientation === 'horizontal' ? '4px' : '0',
+              background: 'whiteAlpha.100',
             }}
             borderBottomWidth={tabOrientation === 'horizontal' ? '4px' : '0'}
           >

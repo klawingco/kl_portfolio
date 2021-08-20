@@ -75,14 +75,8 @@ const Portfolio = ({ articles }: { articles: Article[] }): JSX.Element => {
                 minH={{ lg: '100vh' }}
                 display="flex"
                 alignItems="center"
-                justifyContent={{
-                  base: 'unset',
-                  md: 'flex-start',
-                  lg: 'flex-start',
-                  xl: 'center',
-                }}
                 paddingTop={{ base: 0, lg: 20, xl: 0 }}
-                paddingBottom={{ base: 10, lg: 0 }}
+                paddingBottom={{ base: 12, lg: 0 }}
                 flexDirection={{
                   base: 'column-reverse',
                   lg: 'row',
@@ -97,7 +91,7 @@ const Portfolio = ({ articles }: { articles: Article[] }): JSX.Element => {
                 id="jobs"
                 className="contentRow"
                 paddingTop={{ base: 0, lg: 20, xl: 0 }}
-                paddingBottom={{ base: 10, lg: 0 }}
+                paddingBottom={{ base: 12, lg: 10 }}
                 paddingX={0}
                 flexDirection={'row'}
               >
@@ -109,7 +103,7 @@ const Portfolio = ({ articles }: { articles: Article[] }): JSX.Element => {
                 id="works"
                 className="contentRow"
                 paddingTop={{ base: 0, lg: 20, xl: 20 }}
-                paddingBottom={{ base: 10, lg: 0 }}
+                paddingBottom={{ base: 12, lg: 10 }}
                 paddingX={0}
                 flexDirection={'row'}
               >
@@ -121,7 +115,7 @@ const Portfolio = ({ articles }: { articles: Article[] }): JSX.Element => {
                 id="blog"
                 className="contentRow"
                 paddingTop={{ base: 0, lg: 20, xl: 20 }}
-                paddingBottom={{ base: 10, lg: 0 }}
+                paddingBottom={{ base: 12, lg: 10 }}
                 paddingX={0}
                 flexDirection={'row'}
               >
