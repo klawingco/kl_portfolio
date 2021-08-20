@@ -5,6 +5,7 @@ import {
   Link,
   Stack,
   SimpleGrid,
+  Divider,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { Article } from 'types/article'
@@ -61,6 +62,7 @@ const DevToArticles = ({ articles }: { articles: Article[] }) => {
               <Heading fontSize="larger" paddingX={2}>
                 {item.title}
               </Heading>
+              <Divider borderColor={miniDesc} />
               <Stack spacing={1}>
                 <Heading fontSize="small" paddingX={2}>
                   {item.tag_list.join(', ')}

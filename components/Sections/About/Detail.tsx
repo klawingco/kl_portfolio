@@ -31,7 +31,6 @@ type ISkillSetModal = {
 
 const Detail = ({ onOpen }: ISkillSetModal) => {
   const emphasis = useColorModeValue('teal.500', 'cyan.200')
-  const miniDesc = useColorModeValue('gray.800', 'gray.400')
   const currentYear = new Date().getFullYear()
   const professionalYears = currentYear - 2016
 
@@ -47,7 +46,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
       >
         What I do.
       </Heading>
-      <Text color={miniDesc}>
+      <Text variant="description">
         I`ve been coding professionally for {professionalYears} years, right now
         I am working as a <b>Software Engineer</b> that focuses on{' '}
         <b>architecture</b>, <b>APIs</b>,{' '}
@@ -56,7 +55,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           aria-label="Tech Debt?"
           hasArrow
         >
-          <Text as="span" color={emphasis}>
+          <Text as="span" variant="emphasis">
             <b>nitty-gritty business logics</b>
           </Text>
         </Tooltip>{' '}
@@ -68,7 +67,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           aria-label="I hate Tea!"
           hasArrow
         >
-          <Text as="span" color={emphasis} textDecorationLine="line-through">
+          <Text as="span" variant="emphasis" textDecorationLine="line-through">
             tea
           </Text>
         </Tooltip>{' '}
@@ -116,7 +115,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
         <Box>
           <Text
             as="button"
-            color={emphasis}
+            variant="emphasis"
             fontSize="smaller"
             textAlign="left"
             onClick={onOpen}

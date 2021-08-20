@@ -24,7 +24,6 @@ import { ExperiencesList } from 'config/experience'
 const ExperienceTab = () => {
   const { colorMode } = useColorMode()
   const emphasis = useColorModeValue('teal.500', 'cyan.200')
-  const miniDesc = useColorModeValue('gray.800', 'gray.400')
   const borderColor = useColorModeValue('gray.300', 'gray.600')
   const activeBordercolor = useColorModeValue('teal.500', '#97DFFC')
   const tabOrientation =
@@ -85,7 +84,7 @@ const ExperienceTab = () => {
                   as="span"
                   fontSize="lg"
                   fontWeight="bold"
-                  color={miniDesc}
+                  variant="description"
                 >
                   {company.position}
                 </Text>
@@ -95,7 +94,6 @@ const ExperienceTab = () => {
                     aria-label="scentregroup"
                     rel="noreferrer"
                     target="_blank"
-                    color={emphasis}
                     fontSize="lg"
                     fontWeight="bold"
                   >
@@ -105,7 +103,7 @@ const ExperienceTab = () => {
                     as="span"
                     textTransform="none"
                     fontSize="x-small"
-                    color={miniDesc}
+                    variant="description"
                   >
                     {' '}
                     {company.subDetail}
@@ -118,7 +116,6 @@ const ExperienceTab = () => {
                   <ListItem
                     key={`${company.name}-desc-${idx}`}
                     fontSize="smaller"
-                    color={miniDesc}
                     display="flex"
                     alignItems="center"
                     justifyContent="flex-start"
@@ -128,7 +125,7 @@ const ExperienceTab = () => {
                       color={emphasis}
                       display="block"
                     />
-                    <Text as="span" display="block">
+                    <Text as="span" display="block" variant="description">
                       {roleDesc}
                     </Text>
                   </ListItem>

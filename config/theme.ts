@@ -1,4 +1,9 @@
-import { extendTheme, ColorMode } from '@chakra-ui/react'
+import {
+  extendTheme,
+  ColorMode,
+  ChakraTheme,
+  ThemeComponentProps,
+} from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 
 interface IThemeMode {
@@ -38,6 +43,18 @@ const styles = {
   }),
 }
 
+const textVariants = {
+  emphasis: (props: ThemeComponentProps<ChakraTheme>) => ({
+    color: mode('teal.500', 'cyan.200')(props),
+  }),
+  description: (props: ThemeComponentProps<ChakraTheme>) => ({
+    color: mode('gray.800', 'gray.400')(props),
+  }),
+  accent: (props: ThemeComponentProps<ChakraTheme>) => ({
+    color: mode('black.400', 'cyan.200')(props),
+  }),
+}
+
 const theme = extendTheme({
   config,
   fonts: {
@@ -50,6 +67,35 @@ const theme = extendTheme({
       baseStyle: (props) => ({
         color: mode('teal.500', 'cyan.200')(props),
       }),
+      variants: {
+        ...textVariants,
+        description: (props: ThemeComponentProps<ChakraTheme>) => ({
+          color: mode('gray.800', 'gray.400')(props),
+          _hover: {
+            color: mode('teal.500', 'cyan.200')(props),
+          },
+        }),
+      },
+    },
+    Text: {
+      variants: textVariants,
+    },
+    Heading: {
+      variants: textVariants,
+    },
+    Button: {
+      variants: {
+        outline: (props) => ({
+          borderColor: mode('black.400', 'cyan.200')(props),
+        }),
+      },
+    },
+    Icon: {
+      variants: {
+        accent: (props) => ({
+          borderColor: mode('gray.800', 'gray.400')(props),
+        }),
+      },
     },
   },
 })
