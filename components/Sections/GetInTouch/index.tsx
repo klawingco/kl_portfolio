@@ -39,9 +39,9 @@ const GetInTouch = () => {
 
   return (
     <Stack
-      width={{ base: '99%', lg: '60%', xl: '73%' }}
+      width={{ base: '99%', lg: '60%', xl: '75%' }}
       height="100%"
-      spacing={6}
+      spacing={{ base: 6, xl: 8 }}
     >
       <Heading
         size="2xl"
@@ -64,7 +64,7 @@ const GetInTouch = () => {
       <Text color={miniDesc}>
         Though, I am fairly introvert myself. I do reply to messages as long as
         my human interaction battery last. Coding, work, movies or even weeb
-        stuf, anything is cool. So feel free to message me on any of my social
+        stuff, anything is cool. So feel free to message me on any of my social
         media or shoot me an{' '}
         <Link
           href="mailto:marcjhon18@gmail.com"

@@ -113,15 +113,15 @@ const Sidebar = () => {
             fontSize="small"
             paddingRight={{ lg: '12' }}
             variants={fadeInUp}
+            maxWidth="80%"
           >
             Hey! How nice of you to look at my personal site,
             <Text color={thankYou} as="span">
               {' '}
               Thank you!
             </Text>
-            <br />I am software engineer that specializes at backends and
-            somewhat to extent Front end stuff, and recently found myself
-            dabbing into UX too.
+            <br />I am software engineer that specializes at backend apis, front
+            end integration, recently found myself dabbing and studying UX too.
           </MotionText>
           <MotionButton
             size="lg"

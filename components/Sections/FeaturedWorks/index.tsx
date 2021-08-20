@@ -18,9 +18,9 @@ const FeaturedWorksSection = () => {
 
   return (
     <Stack
-      width={{ base: '99%', lg: '60%', xl: '73%' }}
+      width={{ base: '99%', lg: '60%', xl: '75%' }}
       height="100%"
-      spacing={6}
+      spacing={{ base: 6, xl: 8 }}
     >
       <Heading
         size="2xl"
@@ -31,8 +31,8 @@ const FeaturedWorksSection = () => {
         Some of my works.
       </Heading>
       <Text color={miniDesc}>
-        Checkout some of my works I did at freelancing, projects at the company
-        and even case studies.
+        Checkout some of my works I did at freelancing, company projects and
+        even case studies.
       </Text>
 
       <MotionGrid

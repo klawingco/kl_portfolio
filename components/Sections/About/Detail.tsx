@@ -8,10 +8,9 @@ import {
   Icon,
   SimpleGrid,
   Box,
-  useColorModeValue,
-  Link,
   Tooltip,
   Stack,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import {
   SiDotNet,
@@ -29,15 +28,15 @@ import { IoMdOpen } from 'react-icons/io'
 type ISkillSetModal = {
   onOpen(): void
 }
+
 const Detail = ({ onOpen }: ISkillSetModal) => {
   const emphasis = useColorModeValue('teal.500', 'cyan.200')
   const miniDesc = useColorModeValue('gray.800', 'gray.400')
   const currentYear = new Date().getFullYear()
-  const codingYears = currentYear - 2011
   const professionalYears = currentYear - 2016
 
   return (
-    <Stack width={{ base: '100%', lg: '60%' }} height="100%" spacing={6}>
+    <Stack width={{ base: '100%', lg: '68%' }} spacing={{ base: 6, xl: 8 }}>
       <Heading
         as="h4"
         size="2xl"
@@ -46,37 +45,12 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           fontVariantCaps: 'small-caps',
         }}
       >
-        About me.
+        What I do.
       </Heading>
       <Text color={miniDesc}>
-        Hi!{' '}
-        <Tooltip
-          label="Yes. I am one of those people with really weird nickname, you see.."
-          aria-label="Why KL?"
-          hasArrow
-        >
-          <Text as="span" color={emphasis}>
-            <b>KL</b>
-          </Text>
-        </Tooltip>{' '}
-        here, I started at programming when I got myself into C# and PHP back in
-        2011. Eversince then I started freelancing desktop apps, games and
-        websites for lunch pack pennies. I even have a embarrasing anime{' '}
-        <Link
-          href="https://otakuprogrammer.wordpress.com/"
-          target="_blank"
-          color={emphasis}
-          aria-label="The Otaku Programmer"
-          rel="noreferrer"
-        >
-          wordpress site
-        </Link>{' '}
-        back then.
-      </Text>
-      <Text color={miniDesc}>
-        Almost {codingYears} years later and {professionalYears} of it as
-        professional work, right now I am working as a <b>Software Engineer</b>{' '}
-        that focuses on <b>architecture</b>, <b>APIs</b>,{' '}
+        I`ve been coding professionally for {professionalYears} years, right now
+        I am working as a <b>Software Engineer</b> that focuses on{' '}
+        <b>architecture</b>, <b>APIs</b>,{' '}
         <Tooltip
           label="Ha!. Or more accurately TECH DEBT"
           aria-label="Tech Debt?"
@@ -87,8 +61,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           </Text>
         </Tooltip>{' '}
         and even <b>front end integration</b> stuff now, how time flies!
-      </Text>
-      <Text color={miniDesc}>
+        <br /> <br />
         Here are few main techs that are cup of my{' '}
         <Tooltip
           label="I only drink tea if I needed too!"

@@ -31,13 +31,6 @@ const scrollMoreVariants: Variants = {
       loop: Infinity,
     },
   },
-  // exit: {
-  //   opacity: [1, 0],
-  //   transition: {
-  //     duration: 0.5,
-  //     ease: 'easeOut',
-  //   },
-  // },
 }
 
 const emailVariants: Variants = {

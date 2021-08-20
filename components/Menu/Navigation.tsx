@@ -20,7 +20,6 @@ import useScrollDirection, { ScrollDirection } from 'hooks/useScrollDirection'
 const Navigation = () => {
   const { toggleColorMode, colorMode } = useColorMode()
   const MotionContainer = motion(Container)
-  const MotionButton = motion(Button)
   const [isOpen, toggleOpen] = useCycle(false, true)
   const isMobile = useBreakpointValue(mobileBreakpointsMap)
   const menuButtonSize = useBreakpointValue({
@@ -34,7 +33,6 @@ const Navigation = () => {
   )
 
   const borderColor = useColorModeValue('teal.500', 'cyan.200')
-  const resumeColor = useColorModeValue('teal.500', 'cyan.200')
 
   const IsDark = colorMode === ThemeMode.Dark
   const btnClassName = `${styles.blogBtn} ${!IsDark && styles.dark}`
@@ -200,36 +198,10 @@ const Navigation = () => {
               Contact
             </Button>
           </Box>
-          <Box
-            width={{ base: '100%', lg: 'auto' }}
-            textAlign={{ base: 'center', lg: 'left' }}
-            marginY={{ base: 2, lg: 0 }}
-          >
-            <MotionButton
-              fontWeight="light"
-              variant="solid"
-              fontSize="sm"
-              borderColor={resumeColor}
-              borderRadius="0"
-              borderWidth="1px"
-              color={resumeColor}
-              letterSpacing={2}
-              padding={2}
-              marginX={2}
-              as="a"
-              rel="noreferrer"
-              target="_blank"
-              href="LawingcoMarcJhon2021v2.pdf"
-              onClick={onMenuItemClick}
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              resume
-            </MotionButton>
-          </Box>
           {!isMobile && (
             <Box>
               <IconButton
+                marginX={1}
                 aria-label="Color Mode"
                 variant="ghost"
                 icon={<Icon />}
