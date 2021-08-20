@@ -36,7 +36,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
   const professionalYears = currentYear - 2016
 
   return (
-    <Stack width={{ base: '100%', lg: '60%' }} height="100%" spacing={6}>
+    <Stack width={{ base: '100%', lg: '68%' }} spacing={{ base: 6, xl: 8 }}>
       <Heading
         as="h4"
         size="2xl"
@@ -61,8 +61,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           </Text>
         </Tooltip>{' '}
         and even <b>front end integration</b> stuff now, how time flies!
-      </Text>
-      <Text color={miniDesc}>
+        <br /> <br />
         Here are few main techs that are cup of my{' '}
         <Tooltip
           label="I only drink tea if I needed too!"
