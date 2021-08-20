@@ -32,14 +32,13 @@ const SkillList = ({
   columns: Skill[][]
 }) => {
   const emphasis = useColorModeValue('teal.500', 'cyan.200')
-  const miniDesc = useColorModeValue('gray.800', 'gray.400')
   const [colOne, colTwo = []] = columns
   return (
     <>
-      <Heading as="div" size="sm" paddingBottom={1} color={miniDesc}>
+      <Heading as="div" size="sm" paddingBottom={1} variant="description">
         {title}
       </Heading>
-      <Divider color={miniDesc} marginBottom={4} />
+      <Divider marginBottom={4} />
       <SimpleGrid columns={2} spacing={4} paddingBottom={6}>
         <List spacing={3}>
           {colOne.map((item) => (

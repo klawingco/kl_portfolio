@@ -35,7 +35,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
   const professionalYears = currentYear - 2016
 
   return (
-    <Stack width={{ base: '100%', lg: '68%' }} spacing={{ base: 6, xl: 8 }}>
+    <Stack width={{ base: '100%', lg: '70%' }} spacing={{ base: 6, xl: 8 }}>
       <Heading
         as="h4"
         size="2xl"

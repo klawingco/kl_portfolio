@@ -73,6 +73,7 @@ const theme = extendTheme({
           color: mode('gray.800', 'gray.400')(props),
           _hover: {
             color: mode('teal.500', 'cyan.200')(props),
+            textDecoration: 'none',
           },
         }),
       },
@@ -94,6 +95,15 @@ const theme = extendTheme({
       variants: {
         accent: (props) => ({
           borderColor: mode('gray.800', 'gray.400')(props),
+        }),
+      },
+    },
+    Divider: {
+      variants: {
+        solid: (props) => ({
+          borderColor: mode('gray.800', 'gray.400')(props),
+          marginLeft: 'auto',
+          marginRight: 'auto',
         }),
       },
     },
