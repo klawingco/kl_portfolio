@@ -23,9 +23,6 @@ declare global {
 
 const Avatar = () => {
   const MotionBox = motion(Box)
-  const emphasis = useColorModeValue('teal.500', 'cyan.200')
-  const subTextcolor = useColorModeValue('gray.800', 'gray.400')
-
   const imgAvatar = useColorModeValue(
     AvatarImages.LightMode,
     AvatarImages.DarkMode
@@ -60,12 +57,11 @@ const Avatar = () => {
           margin="auto"
           fallback={<SkeletonCircle height="100%" width="100%" />}
         />
-        <Text textAlign="center" fontSize="smaller" color={subTextcolor}>
+        <Text textAlign="center" fontSize="smaller" variant="description">
           Art by{' '}
           <Link
             href="https://twitter.com/kojiro_ai"
             target="_blank"
-            color={emphasis}
             aria-label="KojiroArt"
             rel="noreferrer"
           >

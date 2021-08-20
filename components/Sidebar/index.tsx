@@ -4,7 +4,6 @@ import {
   Text,
   Button,
   useColorMode,
-  useColorModeValue,
   Container,
   Link,
   Box,
@@ -23,10 +22,6 @@ import {
 import { SocialMedias } from 'config/sidebar'
 const Sidebar = () => {
   const { colorMode } = useColorMode()
-  const catchPhrase = useColorModeValue('black.400', 'cyan.200')
-  const surName = useColorModeValue('teal.500', 'cyan.200')
-  const miniDesc = useColorModeValue('gray.800', 'gray.400')
-  const thankYou = useColorModeValue('teal.500', 'cyan.200')
   const display = useBreakpointValue({ base: 'none', lg: 'block' })
   const surNameSize = useBreakpointValue({ base: '3xl', md: '4xl' })
   const MotionHeading = motion(Heading)
@@ -63,7 +58,7 @@ const Sidebar = () => {
           <MotionText
             variants={fadeInUp}
             delay={1}
-            color={catchPhrase}
+            variant="accent"
             fontWeight="light"
           >
             Ohh you found me?. Howdy! I am
@@ -80,7 +75,8 @@ const Sidebar = () => {
           <MotionHeading
             as="h2"
             size={surNameSize}
-            color={surName}
+            // color={surName}
+            variant="emphasis"
             className={styles.marginTopForce}
             textTransform="uppercase"
             variants={letterSpace}
@@ -101,7 +97,8 @@ const Sidebar = () => {
           <MotionHeading
             as="h3"
             size="md"
-            color={surName}
+            // color={surName}
+            variant="emphasis"
             className={styles.marginTopSmall}
             variants={fadeInUp}
           >
@@ -109,14 +106,14 @@ const Sidebar = () => {
           </MotionHeading>
 
           <MotionText
-            color={miniDesc}
+            variant="description"
             fontSize="small"
             paddingRight={{ lg: '12' }}
             variants={fadeInUp}
             maxWidth="80%"
           >
             Hey! How nice of you to look at my personal site,
-            <Text color={thankYou} as="span">
+            <Text variant="emphasis" as="span">
               {' '}
               Thank you!
             </Text>
@@ -126,7 +123,6 @@ const Sidebar = () => {
           <MotionButton
             size="lg"
             variant="outline"
-            borderColor={catchPhrase}
             borderWidth="1px"
             borderRadius="0"
             fontWeight="normal"
@@ -142,14 +138,11 @@ const Sidebar = () => {
             Get in touch!
           </MotionButton>
 
-          <MotionBox d="flex" variants={simpleOpacity} color={miniDesc}>
+          <MotionBox d="flex" variants={simpleOpacity}>
             {SocialMedias.map((socMedia) => (
               <Link
-                color="currentcolor"
+                variant="description"
                 key={socMedia.label}
-                _hover={{
-                  color: thankYou,
-                }}
                 aria-label={socMedia.label}
                 rel="noreferrer"
                 width={8}

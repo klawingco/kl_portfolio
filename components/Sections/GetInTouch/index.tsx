@@ -1,13 +1,5 @@
 import { memo } from 'react'
-import {
-  Heading,
-  Text,
-  Stack,
-  Link,
-  Icon,
-  Box,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { Heading, Text, Stack, Link, Icon, Box } from '@chakra-ui/react'
 import { motion, Variants } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { RiHeartPulseFill, RiCopyleftLine, RiGithubFill } from 'react-icons/ri'
@@ -33,10 +25,7 @@ const rimuruVariant: Variants = {
 }
 
 const GetInTouch = () => {
-  const miniDesc = useColorModeValue('gray.800', 'gray.400')
-  const emphasis = useColorModeValue('teal.500', 'cyan.200')
   const [ref, inView] = useInView()
-
   return (
     <Stack
       width={{ base: '99%', lg: '60%', xl: '75%' }}
@@ -50,7 +39,7 @@ const GetInTouch = () => {
         }}
       >
         Say hi!{' '}
-        <Text as="span" fontSize="2xl" color={emphasis}>
+        <Text as="span" fontSize="2xl" variant="emphasis">
           <motion.div
             style={{ display: 'inline-block' }}
             variants={rimuruVariant}
@@ -61,7 +50,7 @@ const GetInTouch = () => {
           </motion.div>
         </Text>
       </Heading>
-      <Text color={miniDesc}>
+      <Text variant="description">
         Though, I am fairly introvert myself. I do reply to messages as long as
         my human interaction battery last. Coding, work, movies or even weeb
         stuff, anything is cool. So feel free to message me on any of my social
@@ -79,17 +68,13 @@ const GetInTouch = () => {
       <Box
         spacing={0.5}
         textAlign="center"
-        color={miniDesc}
         fontFamily="monospace"
         paddingTop={{ base: 10, lg: 20, xl: 20 }}
         paddingBottom={{ base: 5, lg: 18 }}
       >
         <Link
-          color={miniDesc}
-          _hover={{
-            textDecoration: 'none',
-            color: emphasis,
-          }}
+          variant="description"
+          textDecoration="none"
           rel="noreferrer"
           href="https://github.com/klawingco/kl_portfolio"
           target="_blank"
