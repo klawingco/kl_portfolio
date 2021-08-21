@@ -1,32 +1,32 @@
+/* eslint-disable react/no-multi-comp */
 import {
   Box,
   Image,
   ResponsiveValue,
-  Link,
+  Divider,
   Skeleton,
   Text,
-  Flex,
+  SimpleGrid,
+  Button,
+  Container,
+  Stack,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import styles from './styles.module.css'
 import { easing, DURATIONS } from 'config/animations'
-
-export type TitlePosition =
-  | 'right-top'
-  | 'right-bottom'
-  | 'left-top'
-  | 'left-bottom'
 
 export type FeaturedCardProps = {
   // Still can't find what's correct value for responsive value
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   height: string | ResponsiveValue<any>
   src: string
-  alt: string
+  idx: number
+  title: string
+  description: string
   objectPosition?: string
   ctaUrl: string
-  applyBg?: boolean
-  titlePosition?: TitlePosition
+  isMobile?: boolean
 }
 
 const variants = {
@@ -50,67 +50,132 @@ const variants = {
     },
   },
 }
-const EDGE_RADIUS = '0.5em'
-const getCardTitlePosition = (titlePosition: TitlePosition) => {
-  if (titlePosition === 'right-top') {
-    return { right: 0, top: 0, borderBottomLeftRadius: EDGE_RADIUS }
-  } else if (titlePosition === 'right-bottom') {
-    return { right: 0, bottom: 0, borderTopLeftRadius: EDGE_RADIUS }
-  } else if (titlePosition === 'left-top') {
-    return { left: 0, top: 0, borderBottomRightRadius: EDGE_RADIUS }
-  } else if (titlePosition === 'left-bottom') {
-    return { left: 0, bottom: 0, borderTopRightRadius: EDGE_RADIUS }
-  }
-  return {}
-}
 
 const MotionImage = motion(Image)
-const FeaturedCard = ({
-  height,
-  src,
-  alt,
-  objectPosition,
+
+const ProjectDescription = ({
+  idx,
+  title,
+  description,
   ctaUrl,
-  applyBg,
-  titlePosition = 'right-bottom',
-}: FeaturedCardProps) => (
-  <Link href={ctaUrl} rel="noreferrer" target="_blank">
-    <Box
-      height="auto"
-      className={styles.featureCard}
-      bg={applyBg ? 'gray.900' : ''}
-    >
-      <MotionImage
-        height={height}
-        width="100%"
-        src={src}
-        alt={alt}
-        objectFit="cover"
-        objectPosition={objectPosition}
-        loading="lazy"
-        opacity={0.75}
-        whileHover={variants.hover}
-        whileTap={variants.tap}
-        fallback={<Skeleton height={height} width="100%" />}
-      />
-      <Flex
-        position="absolute"
-        className={styles.featureCover}
-        {...getCardTitlePosition(titlePosition)}
+  isLeft,
+}: {
+  idx?: number
+  title: string
+  description: string
+  ctaUrl: string
+  isLeft: boolean
+}) => (
+  <Container
+    paddingX={5}
+    paddingY={1}
+    display="flex"
+    alignItems="center"
+    justifyContent="space-around"
+    flexDirection="column"
+  >
+    <Stack spacing={1} width="100%">
+      <Text
+        fontSize={{ base: 'md', md: 'large', '2xl': 'xx-large' }}
+        fontWeight="bold"
+        letterSpacing={2}
+        width="90%"
+        alignSelf={isLeft ? 'flex-end' : 'flex-start'}
+        textTransform="uppercase"
+        as="span"
       >
-        <Text
-          paddingY={1}
-          paddingX={4}
-          fontSize={{ base: 'md', lg: 'md', xl: 'md', '2xl': 'larger' }}
-          color="gray.100"
-          letterSpacing={2}
-          textTransform="uppercase"
-        >
-          {alt}
+        <Text variant="accentAlternative" fontSize="md" as="span">
+          #0{idx}
+          {'  '}
         </Text>
-      </Flex>
-    </Box>
-  </Link>
+        {title}
+      </Text>
+      <Divider
+        borderColor="#A6A6A6"
+        width="90%"
+        marginLeft={0}
+        alignSelf={isLeft ? 'flex-end' : 'flex-start'}
+      />
+    </Stack>
+    <Text
+      fontSize="smaller"
+      variant="accentAlternative"
+      width="90%"
+      alignSelf={isLeft ? 'flex-end' : 'flex-start'}
+      wordBreak="break-word"
+      paddingY={{ base: 3, md: 0 }}
+    >
+      {description}
+    </Text>
+    <Button
+      variant="outlineAlternative"
+      fontWeight="light"
+      fontSize={{ base: 'sm', '2xl': 'md' }}
+      size="sm"
+      as="a"
+      href={ctaUrl}
+      rel="noreferrer"
+      target="_blank"
+      marginY={{ base: 3, md: 0 }}
+    >
+      View Project
+    </Button>
+  </Container>
 )
 
+const FeaturedCard = ({
+  idx,
+  height,
+  src,
+  title,
+  description,
+  objectPosition,
+  ctaUrl,
+}: FeaturedCardProps) => {
+  const isLeftImage = idx % 2 === 0
+  const bg = useColorModeValue('blackAlpha.50', 'whiteAlpha.200')
+  const CoverImage = () => (
+    <MotionImage
+      height={height}
+      width="100%"
+      src={src}
+      alt={title}
+      objectFit="cover"
+      objectPosition={objectPosition}
+      loading="lazy"
+      opacity={0.75}
+      whileHover={variants.hover}
+      whileTap={variants.tap}
+      fallback={<Skeleton height={height} width="100%" />}
+    />
+  )
+
+  return (
+    <Box
+      height="auto"
+      bg={bg}
+      borderRadius="1em"
+      className={styles.featureCard}
+      borderColor={bg}
+      borderWidth="1px"
+    >
+      <SimpleGrid
+        columns={{ base: 1, md: 2 }}
+        spacing={{ base: 3, md: 0 }}
+        display={{ base: 'flex', md: 'grid' }}
+        flexDirection={{ base: 'column-reverse', md: 'initial' }}
+      >
+        {isLeftImage && <CoverImage />}
+        <ProjectDescription
+          idx={idx}
+          title={title}
+          description={description}
+          ctaUrl={ctaUrl}
+          isLeft={isLeftImage}
+        />
+        {!isLeftImage && <CoverImage />}
+      </SimpleGrid>
+    </Box>
+  )
+}
 export default FeaturedCard

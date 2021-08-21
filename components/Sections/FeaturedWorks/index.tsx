@@ -28,56 +28,52 @@ const FeaturedWorksSection = () => (
     <MotionGrid
       templateRows="repeat(1, 1fr)"
       templateColumns="repeat(6, 1fr)"
-      gap={{ base: 3, md: 4 }}
+      gap={{ base: 3, md: 6 }}
       variants={galleryStagger}
     >
       <MotionGridItem colSpan={6} variants={fadeInUpSlower}>
         <FeaturedCard
-          alt="Tobira!"
+          idx={1}
+          title="Tobira!"
           src="/works/tobira/IphoneX-tobira.jpg"
+          description="Japanese social media platform for travelers to show off their
+          adventure to the world. I was incharge of Front end integration, made using React, Antd and Styled Components."
           height={{ base: '130px', md: '225px', '2xl': '300px' }}
           ctaUrl="https://tobira-app-test.netlify.app/"
-          titlePosition="left-top"
-        />
-      </MotionGridItem>
-      <MotionGridItem colSpan={{ base: 6, md: 4 }} variants={fadeInUpSlower}>
-        <FeaturedCard
-          alt="RSV"
-          src="/works/rsv.png"
-          height={{ base: '130px', md: '225px', '2xl': '320px' }}
           objectPosition="right 20%"
-          ctaUrl="https://solution.rsv.ltd/jp"
-          titlePosition="left-bottom"
         />
       </MotionGridItem>
 
-      <MotionGridItem
-        colSpan={2}
-        rowSpan={{ base: 1, md: 1 }}
-        variants={fadeInUpSlower}
-      >
+      <MotionGridItem colSpan={6} variants={fadeInUpSlower}>
         <FeaturedCard
-          alt="ProT KYC"
-          src="/works/prot_kyc01.png"
-          height={{ base: '220px', md: '225px', '2xl': '320px' }}
-          ctaUrl="https://tokeneckyc.blotocol.net/"
+          idx={2}
+          title="RSV"
+          description="RSV is a smart contract (ERC20) powered reservation system. I am incharge of backend using NET.Core 2.1."
+          src="/works/rsv.png"
+          height={{ base: '130px', md: '225px', '2xl': '300px' }}
+          ctaUrl="https://solution.rsv.ltd/jp"
         />
       </MotionGridItem>
-      <MotionGridItem colSpan={{ base: 4, md: 3 }} variants={fadeInUpSlower}>
+
+      <MotionGridItem colSpan={6} variants={fadeInUpSlower}>
         <FeaturedCard
-          alt="Agora School"
+          idx={3}
+          title="Agora School"
+          description="A quizz - reviewer LMS, I made as a freelancer. Backend were powered by PHPSlim and VueJS for Front end."
           src="/works/agora.png"
-          height={{ base: '220px', md: '225px', '2xl': '260px' }}
-          ctaUrl="#"
+          height={{ base: '130px', md: '225px', '2xl': '300px' }}
+          ctaUrl="https://dev.agora-school.com"
           objectPosition="right 20%"
-          titlePosition="left-bottom"
         />
       </MotionGridItem>
-      <MotionGridItem colSpan={{ base: 6, md: 3 }} variants={fadeInUpSlower}>
+
+      <MotionGridItem colSpan={6} variants={fadeInUpSlower}>
         <FeaturedCard
-          alt="TMH Layla EC"
+          idx={4}
+          title="TMH Layla EC"
+          description="A Japanese Semi-conductor e-commerce made at my old place at IVP. I was working with backend using ASP.NET MVC"
           src="/works/tmh.png"
-          height={{ base: '130px', md: '225px', '2xl': '260px' }}
+          height={{ base: '130px', md: '225px', '2xl': '300px' }}
           ctaUrl="https://www.layla-ec.com/"
         />
       </MotionGridItem>
