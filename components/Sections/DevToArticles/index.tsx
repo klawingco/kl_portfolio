@@ -11,6 +11,7 @@ import {
 import { Article } from 'types/article'
 
 const DevToArticles = ({ articles }: { articles: Article[] }) => {
+  const bg = useColorModeValue('blackAlpha.50', 'whiteAlpha.100')
   const borderColor = useColorModeValue('blackAlpha.300', 'whiteAlpha.100')
   const alphaHover = useColorModeValue(
     'rgba(49, 151, 149, 0.06)',
@@ -54,6 +55,7 @@ const DevToArticles = ({ articles }: { articles: Article[] }) => {
               padding={{ base: '1em', '2xl': '1.5em' }}
               height="100%"
               transition="all 0.2s ease-in-out"
+              backgroundColor={bg}
               _hover={{
                 background: alphaHover,
               }}
@@ -61,9 +63,13 @@ const DevToArticles = ({ articles }: { articles: Article[] }) => {
               <Heading fontSize="larger" paddingX={2}>
                 {item.title}
               </Heading>
-              <Divider variant="solid" width="95%" />
+              <Divider borderColor="#A6A6A6" width="95%" />
               <Stack spacing={1}>
-                <Heading fontSize="small" paddingX={2}>
+                <Heading
+                  fontSize="small"
+                  paddingX={2}
+                  variant="accentAlternative"
+                >
                   {item.tag_list.join(', ')}
                 </Heading>
                 <Heading fontSize="smaller" variant="description" paddingX={2}>

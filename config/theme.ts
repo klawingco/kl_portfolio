@@ -53,6 +53,9 @@ const textVariants = {
   accent: (props: ThemeComponentProps<ChakraTheme>) => ({
     color: mode('black.400', 'cyan.200')(props),
   }),
+  accentAlternative: (props: ThemeComponentProps<ChakraTheme>) => ({
+    color: mode('#595959', '#A6A6A6')(props),
+  }),
 }
 
 const theme = extendTheme({
@@ -88,6 +91,17 @@ const theme = extendTheme({
       variants: {
         outline: (props) => ({
           borderColor: mode('black.400', 'cyan.200')(props),
+        }),
+        outlineAlternative: (props) => ({
+          borderWidth: '1px',
+          borderRadius: 0,
+          borderColor: mode('#595959', 'whiteAlpha.500')(props),
+          _hover: {
+            backgroundColor: mode(
+              'rgba(49, 151, 149, 0.06)',
+              'rgba(157, 236, 249, 0.06)'
+            )(props),
+          },
         }),
       },
     },
