@@ -131,8 +131,9 @@ const FeaturedCard = ({
   description,
   objectPosition,
   ctaUrl,
+  isMobile,
 }: FeaturedCardProps) => {
-  const isLeftImage = idx % 2 === 0
+  const isLeftImage = isMobile ? false : idx % 2 === 0
   const bg = useColorModeValue('blackAlpha.50', 'whiteAlpha.200')
   const CoverImage = () => (
     <MotionImage
