@@ -110,7 +110,7 @@ const Sidebar = () => {
             fontSize="small"
             paddingRight={{ lg: '12' }}
             variants={fadeInUp}
-            maxWidth="80%"
+            maxWidth={{ base: '100%', lg: '80%' }}
           >
             Hey! How nice of you to look at my personal site,
             <Text variant="emphasis" as="span">

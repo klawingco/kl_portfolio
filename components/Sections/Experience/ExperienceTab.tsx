@@ -36,8 +36,8 @@ const ExperienceTab = () => {
     }) ?? ('vertical' as any)
 
   const tabMinWidth = useBreakpointValue({
-    base: '150px',
-    sm: '150px',
+    base: '160px',
+    sm: '160px',
     md: 'auto',
     lg: 'auto',
     xl: 'auto',
