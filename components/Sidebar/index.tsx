@@ -75,7 +75,6 @@ const Sidebar = () => {
           <MotionHeading
             as="h2"
             size={surNameSize}
-            // color={surName}
             variant="emphasis"
             className={styles.marginTopForce}
             textTransform="uppercase"
@@ -97,7 +96,6 @@ const Sidebar = () => {
           <MotionHeading
             as="h3"
             size="md"
-            // color={surName}
             variant="emphasis"
             className={styles.marginTopSmall}
             variants={fadeInUp}

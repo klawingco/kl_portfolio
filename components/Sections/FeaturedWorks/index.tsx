@@ -38,7 +38,7 @@ const FeaturedWorksSection = () => {
       <MotionGrid
         templateRows="repeat(1, 1fr)"
         templateColumns="repeat(6, 1fr)"
-        gap={{ base: 3, md: 6 }}
+        gap={{ base: 5, md: 6 }}
         variants={galleryStagger}
       >
         <MotionGridItem colSpan={6} variants={fadeInUpSlower}>
