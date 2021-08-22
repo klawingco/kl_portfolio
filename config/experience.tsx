@@ -41,8 +41,8 @@ export const Experiences: {
         >
           Westfield Marketing Hub
         </Link>{' '}
-        into NextJS and Typescript. Restructuring the old express backend app
-        into a newer approach.
+        using NextJS and Typescript. Restructuring the old express backend app
+        into a newer design approach.
       </>,
       <>
         Created multiple Contentful and Bynder extensions to improve BX process
@@ -61,8 +61,8 @@ export const Experiences: {
         main site and Graphql apis written in NodeJS.
       </>,
       <>
-        Migrating of existing marketing emails related tools and batches into
-        from Responsys into the new platform called Braze.
+        Migrating of existing marketing emails related tools and batches from
+        Responsys into the new platform called Braze.
       </>,
       <>
         Hired at early 2020, first big task was helping with selection a new
