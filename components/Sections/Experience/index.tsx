@@ -16,9 +16,9 @@ const DetailSection = () => (
       Places i’ve worked.
     </Heading>
     <Text variant="description">
-      Since 2016, I’ve had a privilege to work with several companies that
-      enables me to hone my skills and talents. These companies will always have
-      a special place in my heart. Currently I am working with{' '}
+      Since 2016, had a privilege to work with several companies that enables me
+      to hone my skills and talents. These companies will always have a special
+      place in my heart. Currently I am working with{' '}
       <Link
         href="https://www.scentregroup.com/home-page"
         target="_blank"

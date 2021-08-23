@@ -116,7 +116,7 @@ const Sidebar = () => {
               Thank you!
             </Text>
             <br />I am software engineer that specializes at backend apis, front
-            end integration, recently found myself dabbing and studying UX too.
+            end integration, recently found myself studying UX too.
           </MotionText>
           <MotionButton
             size="lg"
