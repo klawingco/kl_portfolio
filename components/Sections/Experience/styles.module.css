@@ -1,0 +1,10 @@
+.experienceTabs::-webkit-scrollbar{
+  height: 0.5em;
+}
+.experienceTabs::-webkit-scrollbar-track-piece{
+  height: 10px;
+}
+.experienceTabs::-webkit-scrollbar-thumb{
+  background: var(--chakra-colors-gray-600);
+  border-radius: 1em;
+}

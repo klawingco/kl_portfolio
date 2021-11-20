@@ -19,13 +19,17 @@ import {
   useColorMode,
 } from '@chakra-ui/react'
 import { BiRightArrow } from 'react-icons/bi'
+import styles from './styles.module.css'
 import { ExperiencesList } from 'config/experience'
+import { mobileBreakpointsMap } from 'config/theme'
 
 const ExperienceTab = () => {
   const { colorMode } = useColorMode()
   const emphasis = useColorModeValue('teal.500', 'cyan.200')
   const borderColor = useColorModeValue('gray.300', 'gray.600')
   const activeBordercolor = useColorModeValue('teal.500', '#97DFFC')
+  const isMobile = useBreakpointValue(mobileBreakpointsMap)
+
   const tabOrientation =
     useBreakpointValue({
       base: 'horizontal',
@@ -42,10 +46,15 @@ const ExperienceTab = () => {
     lg: 'auto',
     xl: 'auto',
   })
-
   return (
     <Tabs id="experienceTabs" orientation={tabOrientation} isLazy>
-      <TabList width={'30%'} borderColor="transparent">
+      <TabList
+        width={!isMobile ? '30%' : 'auto'}
+        borderColor="transparent"
+        overflowX={isMobile ? 'scroll' : 'auto'}
+        overflowY={'hidden'}
+        className={styles.experienceTabs}
+      >
         {ExperiencesList.map((company) => (
           <Tab
             key={`Tab-${company.name}`}
