@@ -1,6 +1,6 @@
 import { Link } from '@chakra-ui/react'
 
-export type Company = 'SCG' | 'Blotocol'
+export type Company = 'Deloitte' | 'SCG' | 'Blotocol'
 
 export type CompanyDetail = {
   name: string
@@ -19,13 +19,32 @@ export type CompanyDetail = {
 export const Experiences: {
   [key in Company]: CompanyDetail
 } = {
+  Deloitte: {
+    name: 'Deloitte',
+    longName: 'Deloitte Consulthing Phils. Delivery Center',
+    subDetail: 'Consulthing Phils. Delivery Center',
+    url: 'https://www2.deloitte.com/',
+    position: 'Software Engineer Consultant',
+    duration: 'Sep 2021 - Present',
+    logo: {
+      light: '/worked_at_logos/deloitte/Deloitte_logo_black.png',
+      dark: '/worked_at_logos/deloitte/Deloitte_logo.png',
+    },
+    roles: [
+      <>
+        Started early September and undergoing training for .NET Sitecore 10,
+        Sitecore SXA and different topologies it provides.{' '}
+      </>,
+      <>TBA...</>,
+    ],
+  },
   SCG: {
     name: 'Scentregroup',
     longName: 'Scentregroup Limited AU',
     subDetail: 'via Prosource BPO',
     url: 'https://www.scentregroup.com/',
     position: 'Software Engineer',
-    duration: 'Feb 2020 - Present',
+    duration: 'Feb 2020 - Sep 2021',
     logo: {
       light: '/worked_at_logos/scg/SCG_400x400.jpg',
       dark: '/worked_at_logos/scg/SCG.png',
@@ -113,4 +132,8 @@ export const Experiences: {
   },
 }
 
-export const ExperiencesList = [Experiences.SCG, Experiences.Blotocol]
+export const ExperiencesList = [
+  Experiences.Deloitte,
+  Experiences.SCG,
+  Experiences.Blotocol,
+]
