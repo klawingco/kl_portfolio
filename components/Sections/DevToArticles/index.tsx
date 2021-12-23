@@ -59,6 +59,7 @@ const DevToArticles = ({ articles }: { articles: Article[] }) => {
               _hover={{
                 background: alphaHover,
               }}
+              as="article"
             >
               <Heading fontSize="larger" paddingX={2}>
                 {item.title}
