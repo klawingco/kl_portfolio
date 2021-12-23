@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react'
+import { memo, useCallback, useEffect } from 'react'
 import {
   Container,
   Button,
@@ -47,6 +47,12 @@ const Navigation = () => {
     [isMobile, toggleOpen]
   )
   const scrollDirection = useScrollDirection()
+
+  useEffect(() => {
+    if (scrollDirection === ScrollDirection.Down && isMobile && isOpen) {
+      toggleOpen(0)
+    }
+  }, [isMobile, isOpen, scrollDirection, toggleOpen])
   return (
     <>
       <Box
