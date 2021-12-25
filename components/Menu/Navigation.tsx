@@ -48,11 +48,6 @@ const Navigation = () => {
   )
   const scrollDirection = useScrollDirection()
 
-  useEffect(() => {
-    if (scrollDirection === ScrollDirection.Down && isMobile && isOpen) {
-      toggleOpen(0)
-    }
-  }, [isMobile, isOpen, scrollDirection, toggleOpen])
   return (
     <>
       <Box
