@@ -35,7 +35,28 @@ export const Experiences: {
         Started early September and undergoing training for .NET Sitecore 10,
         Sitecore SXA and different topologies it provides.{' '}
       </>,
-      <>TBA...</>,
+      <>
+        Worked as a Sitecore Backend on new{' '}
+        <Link
+          aria-label="Deloitte Digital AU"
+          href="https://www.deloittedigital.com.au/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Deloitte Digital AU Site.
+        </Link>
+      </>,
+      <>
+        Took{' '}
+        <Link
+          aria-label="Sitecore 10 .NET Developer Certification"
+          href="/certification/Lawingco-Sitecore 10 NET Developer Cert.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Sitecore 10 .NET Developer Certification.
+        </Link>
+      </>,
     ],
   },
   SCG: {
