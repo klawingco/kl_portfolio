@@ -52,7 +52,7 @@ and it should open at
 
 ## Deployment
 
-Nothing special, its setup at Netlify end (irrc: no `netlify.toml`), just merge a feat branch to master branch and you're good. 
+Nothing special, its setup at Netlify end (in other words: no `netlify.toml`), just merge a feat branch to master branch and you're good. 
 
 
 ## Credits
