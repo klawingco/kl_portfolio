@@ -35,6 +35,7 @@ export const Experiences: {
        Contributed to the design and development of a comprehensive .NET payment integration project for a client
        That covered credit card payments and subscription management.
        Introduced Stripe as a new payment provider within the system architecture.
+       Participated in triaging, fixing and adding new functionalitiesto multiple Azure powered APIs of the same client.
       </>,
       <>
         Worked as a Sitecore Backend on new{' '}
