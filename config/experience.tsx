@@ -32,8 +32,9 @@ export const Experiences: {
     },
     roles: [
       <>
-        Started early September and undergoing training for .NET Sitecore 10,
-        Sitecore SXA and different topologies it provides.{' '}
+       Contributed to the design and development of a comprehensive .NET payment integration project for a client
+       That covered credit card payments and subscription management.
+       Introduced Stripe as a new payment provider within the system architecture.
       </>,
       <>
         Worked as a Sitecore Backend on new{' '}
@@ -47,7 +48,8 @@ export const Experiences: {
         </Link>
       </>,
       <>
-        Took{' '}
+        Udergone training for .NET Sitecore 10,
+        Sitecore SXA and different topologies it provides.{' '} and Passed {' '}
         <Link
           aria-label="Sitecore 10 .NET Developer Certification"
           href="/certification/Lawingco-Sitecore 10 NET Developer Cert.pdf"
