@@ -7,6 +7,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
+import Script from 'next/script'
 import OpenGraphHead from 'components/Misc/OpenGraphHead'
 import FadeInLayout from 'components/Layout/FadeWhenVisible'
 import Menu from 'components/Menu'
@@ -16,7 +17,6 @@ import About from 'components/Sections/About'
 import Experience from 'components/Sections/Experience'
 import FeaturedWorks from 'components/Sections/FeaturedWorks'
 import ScrollMore from 'components/Misc/ScrollMore'
-
 import { Article } from 'types/article'
 // These are on bottom sections so no need to render it instantly
 const DevToArticles = dynamic(() => import('components/Sections/DevToArticles'))
@@ -31,9 +31,19 @@ const Portfolio = ({ articles }: { articles: Article[] }): JSX.Element => {
     xl: 0,
   })
   const paddTop = useBreakpointValue({ base: '20', sm: 20, md: 20 })
-
   return (
     <>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
+      />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_ANALYTICS_ID}');
+        `}
+      </Script>
       <OpenGraphHead />
       <Menu />
       <Grid
